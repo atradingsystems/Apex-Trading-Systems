@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
 
 export const metadata: Metadata = {
-  title: "Apex Trading Systems | MES Futures Trading Community",
-  description: "Master MES futures trading with ICT concepts and the 8AM ORB strategy. Join a community of serious traders.",
+  title: "Apex Trading Systems | ES & NQ Futures Trading Community",
+  description: "Master ES & NQ futures trading with ICT concepts and the 8AM ORB strategy. Join a community of serious traders.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

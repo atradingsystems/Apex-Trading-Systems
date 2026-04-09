@@ -32,7 +32,7 @@ export default function Footer() {
               <span style={{ color: "rgba(255,255,255,0.25)", fontWeight: 300, fontSize: 13, marginLeft: 8, letterSpacing: "0.05em" }}>TRADING SYSTEMS</span>
             </div>
             <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, lineHeight: 1.75, maxWidth: 300 }}>
-              A futures trading education platform built around structure, repeatability, and professional-grade execution on MES.
+              A futures trading education platform built around structure, repeatability, and professional-grade execution on ES & NQ.
             </p>
           </div>
 

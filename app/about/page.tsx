@@ -26,7 +26,7 @@ export default function About() {
             Most trading education is built to sell, not to teach. Courses that promise lambos. Discord servers full of noise. Indicators that don&apos;t work. Communities that disappear the moment you need help.
           </p>
           <p>
-            Apex Trading Systems is different. We built this around a single methodology — <span className="text-white font-semibold">ICT concepts applied to MES futures</span> — and a single primary setup: the <span className="text-gold font-semibold">8AM Opening Range Breakout</span>.
+            Apex Trading Systems is different. We built this around a single methodology — <span className="text-white font-semibold">ICT concepts applied to ES & NQ futures</span> — and a single primary setup: the <span className="text-gold font-semibold">8AM Opening Range Breakout</span>.
           </p>
           <p>
             One instrument. One setup. Studied deeply. That&apos;s the edge.

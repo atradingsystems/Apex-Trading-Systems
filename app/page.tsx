@@ -6,7 +6,7 @@ const G = "#D4AF37"; // gold
 
 const features = [
   { icon: "📐", title: "ICT Concepts & Market Structure", desc: "Learn how institutional order flow drives price. Master liquidity, BOS, CHoCH, and the concepts that actually explain price movement." },
-  { icon: "⚡", title: "8AM Opening Range Breakout", desc: "Our primary daily setup. One window. One strategy. Repeatable edge every single session on MES futures." },
+  { icon: "⚡", title: "8AM Opening Range Breakout", desc: "Our primary daily setup. One window. One strategy. Repeatable edge every single session on ES & NQ futures." },
   { icon: "💧", title: "Liquidity & Fair Value Gaps", desc: "See the market the way smart money sees it. Hunt liquidity sweeps and enter at institutional FVG zones." },
   { icon: "🛡️", title: "Risk Management & Journaling", desc: "Position sizing, drawdown limits, and the trade journal system that separates consistent traders from gamblers." },
   { icon: "🏦", title: "Prop Firm Funding", desc: "The complete guide to passing your evaluation and scaling to $50K–$150K in funded capital." },
@@ -61,7 +61,7 @@ const tiers = [
 ];
 
 const testimonials = [
-  { name: "Marcus T.", role: "Apex Member", quote: "The ORB strategy alone was worth the membership. Clear, repeatable, and it actually works on MES. Best trading community I've been part of." },
+  { name: "Marcus T.", role: "Apex Member", quote: "The ORB strategy alone was worth the membership. Clear, repeatable, and it actually works on ES & NQ. Best trading community I've been part of." },
   { name: "Jordan R.", role: "Elite Member", quote: "Seeing the live alerts in real time alongside the education just clicks in a way that solo learning never did." },
   { name: "Devon K.", role: "Course Only", quote: "9 modules of actual substance. The liquidity and FVG modules changed the way I see every chart. Finally understand why price moves." },
 ];
@@ -95,7 +95,7 @@ export default function Home() {
             textTransform: "uppercase", color: G,
             marginBottom: 28,
           }}>
-            MES Futures &nbsp;·&nbsp; ICT Methodology &nbsp;·&nbsp; 8AM ORB
+            ES & NQ Futures &nbsp;·&nbsp; ICT Methodology &nbsp;·&nbsp; 8AM ORB
           </p>
 
           <h1 style={{
@@ -105,7 +105,7 @@ export default function Home() {
             letterSpacing: "-0.04em",
             marginBottom: 28,
           }}>
-            Master MES Futures.<br />
+            Master ES & NQ Futures.<br />
             <span style={{ color: G }}>Trade With Edge.</span>
           </h1>
 
@@ -160,7 +160,7 @@ export default function Home() {
           {[
             ["24+", "Community Members"],
             ["9", "Course Modules"],
-            ["MES", "Futures Focused"],
+            ["ES & NQ", "Futures Focused"],
             ["ICT", "Methodology"],
           ].map(([v, l]) => (
             <div key={l} style={{ padding: "24px 12px" }}>
