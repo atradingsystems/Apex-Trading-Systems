@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CheckoutButton from "@/components/CheckoutButton";
 
 const DISCORD = "https://discord.gg/83VwHsTbs";
 const G = "#D4AF37";
@@ -58,10 +59,10 @@ const features = [
 ];
 
 const tiers = [
-  { name: "Free", price: "$0", period: "", desc: "Get started. No card needed.", features: ["Discord community access", "General chat & market talk", "Modules 0–3 (foundations)", "Rules & orientation"], cta: "Join Free", highlight: false },
-  { name: "Apex", price: "$49", period: "/mo", desc: "Full course + daily content.", features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Signals & commentary", "Weekly recap & review"], cta: "Get Apex Access", highlight: false },
-  { name: "Elite", price: "$149", period: "/mo", desc: "Live alerts & mentorship.", features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions", "Priority support"], cta: "Go Elite", highlight: true },
-  { name: "Course Only", price: "$297", period: " once", desc: "Lifetime module access.", features: ["All 9 course modules", "Lifetime access", "Future updates included", "Course Q&A channel"], cta: "Get Lifetime Access", highlight: false },
+  { name: "Free", price: "$0", period: "", desc: "Get started. No card needed.", features: ["Discord community access", "General chat & market talk", "Modules 0–3 (foundations)", "Rules & orientation"], cta: "Join Free", stripeKey: "free", highlight: false },
+  { name: "Apex", price: "$49", period: "/mo", desc: "Full course + daily content.", features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Signals & commentary", "Weekly recap & review"], cta: "Get Apex Access", stripeKey: "apex", highlight: false },
+  { name: "Elite", price: "$149", period: "/mo", desc: "Live alerts & mentorship.", features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions", "Priority support"], cta: "Go Elite", stripeKey: "elite", highlight: true },
+  { name: "Course Only", price: "$297", period: " once", desc: "Lifetime module access.", features: ["All 9 course modules", "Lifetime access", "Future updates included", "Course Q&A channel"], cta: "Get Lifetime Access", stripeKey: "course", highlight: false },
 ];
 
 const testimonials = [
@@ -164,7 +165,11 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{ ...(tier.highlight ? btnGold : btnGlass), display: "block", textAlign: "center" as const, padding: "13px 20px", fontSize: 13, color: tier.highlight ? "#000" : "#fff", letterSpacing: "-0.01em" }}>{tier.cta}</a>
+                <CheckoutButton
+                  tier={tier.stripeKey}
+                  label={tier.cta}
+                  style={{ ...(tier.highlight ? btnGold : btnGlass), padding: "13px 20px", fontSize: 13, color: tier.highlight ? "#000" : "#fff", letterSpacing: "-0.01em" }}
+                />
               </div>
             ))}
           </div>
