@@ -59,6 +59,9 @@ export default function Footer() {
             <div style={{ marginBottom: 14 }}>
               <a href="https://x.com/apextrading00" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.45)", fontSize: 14, textDecoration: "none" }}>X / Twitter</a>
             </div>
+            <div style={{ marginBottom: 14 }}>
+              <a href="https://www.instagram.com/apextradingsystems" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.45)", fontSize: 14, textDecoration: "none" }}>Instagram</a>
+            </div>
           </div>
         </div>
 
