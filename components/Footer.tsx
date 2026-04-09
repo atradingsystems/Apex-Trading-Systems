@@ -1,39 +1,53 @@
 import Link from "next/link";
 
+const G = "#D4AF37";
+
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-white/10 py-12 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer style={{
+      borderTop: "1px solid rgba(255,255,255,0.07)",
+      padding: "64px 24px 40px",
+      background: "#000",
+    }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 48, marginBottom: 64 }}>
           <div>
-            <div className="text-xl font-bold mb-3">
-              <span className="gold-gradient">APEX</span>
-              <span className="text-white ml-2 font-light text-base">TRADING SYSTEMS</span>
+            <div style={{ marginBottom: 16 }}>
+              <span style={{ color: G, fontWeight: 900, fontSize: 18, letterSpacing: "-0.02em" }}>APEX</span>
+              <span style={{ color: "rgba(255,255,255,0.3)", fontWeight: 300, fontSize: 13, marginLeft: 8, letterSpacing: "0.05em" }}>TRADING SYSTEMS</span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              A futures trading education and community platform built around structure, repeatability, and professional-grade execution.
+            <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, lineHeight: 1.7, maxWidth: 320 }}>
+              A futures trading education platform built around structure, repeatability, and professional-grade execution on MES.
             </p>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-3 text-sm uppercase tracking-wider">Navigation</h4>
-            <div className="flex flex-col gap-2">
-              <Link href="/" className="text-gray-400 hover:text-white text-sm transition">Home</Link>
-              <Link href="/about" className="text-gray-400 hover:text-white text-sm transition">About</Link>
-              <Link href="/pricing" className="text-gray-400 hover:text-white text-sm transition">Pricing</Link>
-              <Link href="/join" className="text-gray-400 hover:text-white text-sm transition">Join Discord</Link>
-            </div>
+            <div style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.3)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 20 }}>Navigate</div>
+            {[["Home", "/"], ["About", "/about"], ["Pricing", "/pricing"], ["Join Discord", "/join"]].map(([label, href]) => (
+              <div key={label} style={{ marginBottom: 12 }}>
+                <Link href={href} style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, textDecoration: "none" }}>{label}</Link>
+              </div>
+            ))}
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-3 text-sm uppercase tracking-wider">Community</h4>
-            <div className="flex flex-col gap-2">
-              <a href="https://discord.gg/83VwHsTbs" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition">Discord Server</a>
-              <a href="https://x.com/apextrading00" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition">X / Twitter</a>
-            </div>
+            <div style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.3)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 20 }}>Community</div>
+            {[
+              ["Discord", "https://discord.gg/83VwHsTbs"],
+              ["X / Twitter", "https://x.com/apextrading00"],
+            ].map(([label, href]) => (
+              <div key={label} style={{ marginBottom: 12 }}>
+                <a href={href} target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, textDecoration: "none" }}>{label}</a>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-2">
-          <p className="text-gray-500 text-xs">© 2026 Apex Trading Systems. All rights reserved.</p>
-          <p className="text-gray-600 text-xs">Nothing on this site constitutes financial advice. Trade at your own risk.</p>
+
+        <div style={{
+          borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: 32,
+          display: "flex", justifyContent: "space-between", alignItems: "center",
+          flexWrap: "wrap", gap: 12,
+        }}>
+          <p style={{ color: "rgba(255,255,255,0.2)", fontSize: 13 }}>© 2026 Apex Trading Systems</p>
+          <p style={{ color: "rgba(255,255,255,0.15)", fontSize: 12 }}>Not financial advice. Trade at your own risk.</p>
         </div>
       </div>
     </footer>

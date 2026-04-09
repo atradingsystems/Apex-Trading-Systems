@@ -2,13 +2,15 @@ import Link from "next/link";
 
 const DISCORD = "https://discord.gg/83VwHsTbs";
 
+const G = "#D4AF37"; // gold
+
 const features = [
-  { icon: "📐", title: "ICT Concepts & Market Structure", desc: "Learn how institutional order flow drives price. Master liquidity, BOS, and CHoCH." },
-  { icon: "⚡", title: "8AM Opening Range Breakout", desc: "Our primary daily setup. One window. One strategy. Repeatable edge every session." },
-  { icon: "💧", title: "Liquidity & Fair Value Gaps", desc: "See the market the way smart money sees it. Hunt sweeps, trade FVGs with precision." },
-  { icon: "🛡️", title: "Risk Management & Journaling", desc: "Position sizing, drawdown limits, and the journaling system that builds consistency." },
-  { icon: "🏦", title: "Prop Firm Funding & Scaling", desc: "Pass your eval and trade institutional capital. We cover Apex Trader, Topstep, and more." },
-  { icon: "📚", title: "9-Module Curriculum", desc: "From TradingView setup to funded accounts. A structured path that builds real edge." },
+  { icon: "📐", title: "ICT Concepts & Market Structure", desc: "Learn how institutional order flow drives price. Master liquidity, BOS, CHoCH, and the concepts that actually explain price movement." },
+  { icon: "⚡", title: "8AM Opening Range Breakout", desc: "Our primary daily setup. One window. One strategy. Repeatable edge every single session on MES futures." },
+  { icon: "💧", title: "Liquidity & Fair Value Gaps", desc: "See the market the way smart money sees it. Hunt liquidity sweeps and enter at institutional FVG zones." },
+  { icon: "🛡️", title: "Risk Management & Journaling", desc: "Position sizing, drawdown limits, and the trade journal system that separates consistent traders from gamblers." },
+  { icon: "🏦", title: "Prop Firm Funding", desc: "The complete guide to passing your evaluation and scaling to $50K–$150K in funded capital." },
+  { icon: "🧠", title: "Trading Psychology", desc: "Why your brain works against you — and the mental frameworks that build consistency in live markets." },
 ];
 
 const tiers = [
@@ -16,218 +18,259 @@ const tiers = [
     name: "Free",
     price: "$0",
     period: "",
-    desc: "Start here. No credit card.",
-    features: ["Discord community", "General chat & market talk", "Modules 0–3 (foundations)", "Rules & guidelines"],
+    desc: "Get started. No card needed.",
+    features: ["Discord community access", "General chat & market talk", "Modules 0–3 (foundations)", "Rules & orientation"],
     cta: "Join Free",
     href: DISCORD,
     highlight: false,
+    badge: null,
   },
   {
-    name: "Apex Member",
+    name: "Apex",
     price: "$49",
     period: "/mo",
-    desc: "Full course + daily signals.",
-    features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Signals & commentary", "Weekly recap & review"],
+    desc: "Full course + daily content.",
+    features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Signals & commentary", "Weekly recap & review", "Performance tracking"],
     cta: "Get Apex Access",
     href: DISCORD,
     highlight: false,
+    badge: null,
   },
   {
     name: "Elite",
     price: "$149",
     period: "/mo",
-    desc: "Live alerts & mentorship.",
-    features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions", "Priority support"],
+    desc: "Live alerts, mentorship & voice.",
+    features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship access", "Weekly voice sessions", "Priority support"],
     cta: "Go Elite",
     href: DISCORD,
     highlight: true,
+    badge: "Most Popular",
   },
   {
     name: "Course Only",
     price: "$297",
-    period: " one-time",
+    period: " once",
     desc: "Lifetime module access.",
-    features: ["All 9 course modules", "Lifetime access", "Future updates included", "Course Q&A channel"],
+    features: ["All 9 course modules", "Lifetime access", "Future module updates", "Course Q&A channel"],
     cta: "Get Lifetime Access",
     href: DISCORD,
     highlight: false,
+    badge: "Best Value",
   },
 ];
 
 const testimonials = [
-  { name: "Marcus T.", role: "Apex Member", text: "The ORB strategy alone was worth the membership. Clear, repeatable, and it actually works on MES." },
-  { name: "Jordan R.", role: "Elite Member", text: "Seeing the live alerts in real time alongside the education clicks in a way solo learning never did." },
-  { name: "Devon K.", role: "Course Only", text: "9 modules of actual content — not fluff. The liquidity module opened my eyes. Finally understand why price moves." },
+  { name: "Marcus T.", role: "Apex Member", quote: "The ORB strategy alone was worth the membership. Clear, repeatable, and it actually works on MES. Best trading community I've been part of." },
+  { name: "Jordan R.", role: "Elite Member", quote: "Seeing the live alerts in real time alongside the education just clicks in a way that solo learning never did." },
+  { name: "Devon K.", role: "Course Only", quote: "9 modules of actual substance. The liquidity and FVG modules changed the way I see every chart. Finally understand why price moves." },
 ];
 
 export default function Home() {
   return (
-    <main style={{ background: "#000", color: "#fff", fontFamily: "'Inter', sans-serif" }}>
+    <main style={{ background: "#000", color: "#fff", fontFamily: "inherit" }}>
 
-      {/* HERO */}
+      {/* ── HERO ── */}
       <section style={{
         minHeight: "100vh",
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        padding: "120px 24px 80px",
-        background: "radial-gradient(ellipse at top, #1a1400 0%, #000 60%)",
+        padding: "140px 24px 100px",
         position: "relative",
+        overflow: "hidden",
       }}>
-        <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div style={{
+        {/* subtle radial glow */}
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212,175,55,0.12), transparent)",
+        }} />
+
+        <div style={{ position: "relative", maxWidth: 860 }}>
+          <p style={{
             display: "inline-block",
-            border: "1px solid #D4AF3766",
-            color: "#D4AF37",
-            fontSize: 11,
-            fontWeight: 700,
-            padding: "6px 18px",
-            borderRadius: 999,
-            marginBottom: 32,
-            letterSpacing: "0.15em",
-            textTransform: "uppercase",
+            fontSize: 12, fontWeight: 600, letterSpacing: "0.18em",
+            textTransform: "uppercase", color: G,
+            marginBottom: 28,
           }}>
-            MES Futures · ICT · 8AM ORB
-          </div>
-          <h1 style={{ fontSize: "clamp(48px, 10vw, 88px)", fontWeight: 900, lineHeight: 1.05, marginBottom: 24 }}>
-            Master MES Futures.<br />
-            <span style={{ color: "#D4AF37" }}>Trade With Edge.</span>
-          </h1>
-          <p style={{ color: "#888", fontSize: 18, lineHeight: 1.7, maxWidth: 560, margin: "0 auto 40px" }}>
-            ICT concepts, 8AM ORB strategy, and a community of serious traders. Built for those who want to trade like professionals.
+            MES Futures &nbsp;·&nbsp; ICT Methodology &nbsp;·&nbsp; 8AM ORB
           </p>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+
+          <h1 style={{
+            fontSize: "clamp(52px, 10vw, 96px)",
+            fontWeight: 900,
+            lineHeight: 1.02,
+            letterSpacing: "-0.04em",
+            marginBottom: 28,
+          }}>
+            Master MES Futures.<br />
+            <span style={{ color: G }}>Trade With Edge.</span>
+          </h1>
+
+          <p style={{
+            color: "rgba(255,255,255,0.5)",
+            fontSize: "clamp(16px, 2.5vw, 20px)",
+            lineHeight: 1.65,
+            maxWidth: 540,
+            margin: "0 auto 48px",
+          }}>
+            ICT concepts, the 8AM ORB strategy, and a community of serious traders. Built for those who trade like professionals.
+          </p>
+
+          <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{
-              background: "#D4AF37",
-              color: "#000",
-              fontWeight: 800,
-              padding: "16px 36px",
-              borderRadius: 8,
-              fontSize: 16,
-              textDecoration: "none",
-              display: "inline-block",
+              background: G, color: "#000",
+              fontWeight: 700, fontSize: 15,
+              padding: "15px 32px", borderRadius: 980,
+              textDecoration: "none", letterSpacing: "-0.01em",
+              transition: "opacity 0.2s",
             }}>
-              Join Free →
+              Join Free
             </a>
             <Link href="/pricing" style={{
-              border: "1px solid #ffffff33",
+              background: "rgba(255,255,255,0.07)",
+              border: "1px solid rgba(255,255,255,0.12)",
               color: "#fff",
-              fontWeight: 600,
-              padding: "16px 36px",
-              borderRadius: 8,
-              fontSize: 16,
-              textDecoration: "none",
-              display: "inline-block",
+              fontWeight: 600, fontSize: 15,
+              padding: "15px 32px", borderRadius: 980,
+              textDecoration: "none", letterSpacing: "-0.01em",
             }}>
               View Pricing
             </Link>
           </div>
         </div>
+
+        {/* divider line */}
+        <div style={{
+          position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)",
+          width: "100%", maxWidth: 1200,
+          height: 1, background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)",
+        }} />
       </section>
 
-      {/* STATS BAR */}
-      <section style={{ borderTop: "1px solid #ffffff15", borderBottom: "1px solid #ffffff15", padding: "28px 24px" }}>
-        <div style={{ maxWidth: 700, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, textAlign: "center" }}>
+      {/* ── STATS ── */}
+      <section style={{ padding: "60px 24px" }}>
+        <div style={{
+          maxWidth: 800, margin: "0 auto",
+          display: "grid", gridTemplateColumns: "repeat(4,1fr)",
+          gap: 8, textAlign: "center",
+        }}>
           {[
-            { v: "24+", l: "Members" },
-            { v: "9", l: "Modules" },
-            { v: "MES", l: "Futures" },
-            { v: "ICT", l: "Methodology" },
-          ].map(s => (
-            <div key={s.l}>
-              <div style={{ fontSize: 28, fontWeight: 900, color: "#D4AF37" }}>{s.v}</div>
-              <div style={{ fontSize: 11, color: "#666", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 4 }}>{s.l}</div>
+            ["24+", "Community Members"],
+            ["9", "Course Modules"],
+            ["MES", "Futures Focused"],
+            ["ICT", "Methodology"],
+          ].map(([v, l]) => (
+            <div key={l} style={{ padding: "24px 12px" }}>
+              <div style={{ fontSize: "clamp(28px,5vw,40px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}>{v}</div>
+              <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", marginTop: 6, textTransform: "uppercase", letterSpacing: "0.1em" }}>{l}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* WHAT WE TEACH */}
-      <section style={{ padding: "100px 24px" }}>
+      {/* ── DIVIDER ── */}
+      <div style={{ height: 1, background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)", margin: "0 24px" }} />
+
+      {/* ── WHAT YOU LEARN ── */}
+      <section style={{ padding: "120px 24px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 64 }}>
-            <h2 style={{ fontSize: "clamp(32px, 6vw, 56px)", fontWeight: 900, marginBottom: 16 }}>What You&apos;ll Learn</h2>
-            <p style={{ color: "#888", maxWidth: 480, margin: "0 auto" }}>A complete system — from TradingView setup to passing a prop firm eval. No fluff. Pure price action.</p>
+          <div style={{ maxWidth: 600, marginBottom: 72 }}>
+            <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: G, marginBottom: 16 }}>The Curriculum</p>
+            <h2 style={{ fontSize: "clamp(36px,6vw,64px)", fontWeight: 900, letterSpacing: "-0.04em", lineHeight: 1.05, marginBottom: 20 }}>
+              Everything you need.<br />Nothing you don&apos;t.
+            </h2>
+            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 17, lineHeight: 1.65 }}>
+              A complete 9-module curriculum built around a single methodology. No indicators. No noise. Pure institutional price action.
+            </p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 20 }}>
-            {features.map(f => (
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+            gap: 2,
+          }}>
+            {features.map((f, i) => (
               <div key={f.title} style={{
-                background: "#0d0d0d",
-                border: "1px solid #ffffff15",
-                borderRadius: 16,
-                padding: "28px",
-                transition: "border-color 0.2s",
+                padding: "36px 32px",
+                background: i % 2 === 0 ? "rgba(255,255,255,0.025)" : "transparent",
+                borderRadius: 2,
               }}>
-                <div style={{ fontSize: 36, marginBottom: 16 }}>{f.icon}</div>
-                <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 10 }}>{f.title}</h3>
-                <p style={{ color: "#888", fontSize: 14, lineHeight: 1.7 }}>{f.desc}</p>
+                <div style={{ fontSize: 28, marginBottom: 16 }}>{f.icon}</div>
+                <h3 style={{ fontWeight: 700, fontSize: 17, marginBottom: 10, letterSpacing: "-0.02em" }}>{f.title}</h3>
+                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14, lineHeight: 1.7 }}>{f.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PRICING */}
-      <section style={{ padding: "100px 24px", background: "#050505", borderTop: "1px solid #ffffff10" }}>
+      {/* ── PRICING ── */}
+      <section id="pricing" style={{
+        padding: "120px 24px",
+        background: "rgba(255,255,255,0.015)",
+        borderTop: "1px solid rgba(255,255,255,0.07)",
+        borderBottom: "1px solid rgba(255,255,255,0.07)",
+      }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 64 }}>
-            <h2 style={{ fontSize: "clamp(32px, 6vw, 56px)", fontWeight: 900, marginBottom: 16 }}>Simple Pricing</h2>
-            <p style={{ color: "#888" }}>Start free. Upgrade when you&apos;re ready. Cancel anytime.</p>
+          <div style={{ textAlign: "center", marginBottom: 72 }}>
+            <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: G, marginBottom: 16 }}>Membership</p>
+            <h2 style={{ fontSize: "clamp(36px,6vw,64px)", fontWeight: 900, letterSpacing: "-0.04em", marginBottom: 16 }}>
+              Simple pricing.
+            </h2>
+            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 17 }}>Start free. Upgrade anytime. Cancel whenever.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 20 }}>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px,1fr))", gap: 16 }}>
             {tiers.map(tier => (
               <div key={tier.name} style={{
-                background: tier.highlight ? "#1a1200" : "#0d0d0d",
-                border: tier.highlight ? "2px solid #D4AF37" : "1px solid #ffffff15",
-                borderRadius: 16,
-                padding: "28px",
-                display: "flex",
-                flexDirection: "column",
                 position: "relative",
+                background: tier.highlight ? "linear-gradient(135deg, #1a1200, #0d0d00)" : "rgba(255,255,255,0.03)",
+                border: tier.highlight ? `1px solid ${G}` : "1px solid rgba(255,255,255,0.08)",
+                borderRadius: 20,
+                padding: "32px 28px",
+                display: "flex", flexDirection: "column",
               }}>
-                {tier.highlight && (
+                {tier.badge && (
                   <div style={{
-                    position: "absolute",
-                    top: -14,
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    background: "#D4AF37",
-                    color: "#000",
-                    fontSize: 10,
-                    fontWeight: 900,
-                    padding: "4px 14px",
-                    borderRadius: 999,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    whiteSpace: "nowrap",
-                  }}>Most Popular</div>
+                    position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)",
+                    background: tier.highlight ? G : "rgba(255,255,255,0.15)",
+                    color: tier.highlight ? "#000" : "#fff",
+                    fontSize: 10, fontWeight: 800,
+                    padding: "4px 14px", borderRadius: 999,
+                    letterSpacing: "0.1em", textTransform: "uppercase", whiteSpace: "nowrap",
+                  }}>{tier.badge}</div>
                 )}
-                <h3 style={{ fontWeight: 700, fontSize: 18, color: tier.highlight ? "#D4AF37" : "#fff", marginBottom: 8 }}>{tier.name}</h3>
-                <div style={{ marginBottom: 8 }}>
-                  <span style={{ fontSize: 40, fontWeight: 900 }}>{tier.price}</span>
-                  <span style={{ color: "#666", fontSize: 14 }}>{tier.period}</span>
+
+                <div style={{ marginBottom: 24 }}>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: tier.highlight ? G : "rgba(255,255,255,0.4)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 12 }}>{tier.name}</div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 8 }}>
+                    <span style={{ fontSize: 48, fontWeight: 900, letterSpacing: "-0.04em" }}>{tier.price}</span>
+                    <span style={{ fontSize: 14, color: "rgba(255,255,255,0.35)" }}>{tier.period}</span>
+                  </div>
+                  <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)" }}>{tier.desc}</p>
                 </div>
-                <p style={{ color: "#666", fontSize: 13, marginBottom: 20 }}>{tier.desc}</p>
-                <ul style={{ flex: 1, listStyle: "none", padding: 0, marginBottom: 24 }}>
+
+                <ul style={{ flex: 1, listStyle: "none", padding: 0, marginBottom: 28 }}>
                   {tier.features.map(f => (
-                    <li key={f} style={{ display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 10, fontSize: 14, color: "#ccc" }}>
-                      <span style={{ color: "#D4AF37", marginTop: 1 }}>✓</span>
-                      {f}
+                    <li key={f} style={{ display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 12 }}>
+                      <span style={{ color: G, fontSize: 13, marginTop: 2, flexShrink: 0 }}>✓</span>
+                      <span style={{ fontSize: 14, color: "rgba(255,255,255,0.6)", lineHeight: 1.5 }}>{f}</span>
                     </li>
                   ))}
                 </ul>
+
                 <a href={tier.href} target="_blank" rel="noopener noreferrer" style={{
-                  display: "block",
-                  textAlign: "center",
-                  padding: "14px",
-                  borderRadius: 8,
-                  fontWeight: 700,
-                  fontSize: 14,
+                  display: "block", textAlign: "center",
+                  padding: "13px 20px", borderRadius: 980,
+                  fontWeight: 700, fontSize: 14,
                   textDecoration: "none",
-                  background: tier.highlight ? "#D4AF37" : "transparent",
+                  background: tier.highlight ? G : "transparent",
                   color: tier.highlight ? "#000" : "#fff",
-                  border: tier.highlight ? "none" : "1px solid #ffffff30",
+                  border: tier.highlight ? "none" : "1px solid rgba(255,255,255,0.15)",
+                  letterSpacing: "-0.01em",
                 }}>
                   {tier.cta}
                 </a>
@@ -237,51 +280,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section style={{ padding: "100px 24px" }}>
+      {/* ── TESTIMONIALS ── */}
+      <section style={{ padding: "120px 24px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <h2 style={{ fontSize: "clamp(32px, 6vw, 56px)", fontWeight: 900, textAlign: "center", marginBottom: 64 }}>What Members Say</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 20 }}>
+          <div style={{ textAlign: "center", marginBottom: 72 }}>
+            <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: G, marginBottom: 16 }}>Members</p>
+            <h2 style={{ fontSize: "clamp(36px,6vw,64px)", fontWeight: 900, letterSpacing: "-0.04em" }}>What traders say.</h2>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px,1fr))", gap: 16 }}>
             {testimonials.map(t => (
               <div key={t.name} style={{
-                background: "#0d0d0d",
-                border: "1px solid #ffffff15",
-                borderRadius: 16,
-                padding: 28,
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.07)",
+                borderRadius: 20,
+                padding: "36px 32px",
               }}>
-                <p style={{ color: "#aaa", fontSize: 15, lineHeight: 1.7, marginBottom: 24 }}>&ldquo;{t.text}&rdquo;</p>
-                <div style={{ fontWeight: 600, fontSize: 14 }}>{t.name}</div>
-                <div style={{ color: "#D4AF37", fontSize: 12, marginTop: 4 }}>{t.role}</div>
+                <p style={{ fontSize: 16, color: "rgba(255,255,255,0.7)", lineHeight: 1.7, marginBottom: 28, fontStyle: "italic" }}>
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: 14 }}>{t.name}</div>
+                  <div style={{ fontSize: 12, color: G, marginTop: 4 }}>{t.role}</div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* ── FINAL CTA ── */}
       <section style={{
-        padding: "120px 24px",
+        padding: "160px 24px",
         textAlign: "center",
-        background: "radial-gradient(ellipse at bottom, #1a1400 0%, #000 60%)",
-        borderTop: "1px solid #ffffff10",
+        borderTop: "1px solid rgba(255,255,255,0.07)",
+        position: "relative", overflow: "hidden",
       }}>
-        <div style={{ maxWidth: 600, margin: "0 auto" }}>
-          <h2 style={{ fontSize: "clamp(36px, 8vw, 72px)", fontWeight: 900, lineHeight: 1.1, marginBottom: 20 }}>
-            Ready to trade with<br />
-            <span style={{ color: "#D4AF37" }}>real edge?</span>
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          background: "radial-gradient(ellipse 60% 60% at 50% 100%, rgba(212,175,55,0.08), transparent)",
+        }} />
+        <div style={{ position: "relative", maxWidth: 700, margin: "0 auto" }}>
+          <h2 style={{
+            fontSize: "clamp(44px,8vw,88px)",
+            fontWeight: 900, letterSpacing: "-0.04em", lineHeight: 1.02,
+            marginBottom: 20,
+          }}>
+            Ready to trade<br />
+            <span style={{ color: G }}>with real edge?</span>
           </h2>
-          <p style={{ color: "#888", fontSize: 18, marginBottom: 40 }}>
-            Join 24+ traders already inside Apex Trading Systems. Start free — no credit card required.
+          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 18, marginBottom: 48, lineHeight: 1.6 }}>
+            Join 24+ traders already inside Apex Trading Systems.<br />Start free — no credit card required.
           </p>
           <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{
             display: "inline-block",
-            background: "#D4AF37",
-            color: "#000",
-            fontWeight: 900,
-            padding: "20px 48px",
-            borderRadius: 8,
-            fontSize: 18,
-            textDecoration: "none",
+            background: G, color: "#000",
+            fontWeight: 800, fontSize: 17,
+            padding: "18px 44px", borderRadius: 980,
+            textDecoration: "none", letterSpacing: "-0.01em",
           }}>
             Join the Community →
           </a>
