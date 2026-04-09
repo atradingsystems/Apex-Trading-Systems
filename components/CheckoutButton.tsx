@@ -23,8 +23,14 @@ export default function CheckoutButton({ tier, label, style }: Props) {
         body: JSON.stringify({ tier }),
       });
       const data = await res.json();
-      if (data.url) window.location.href = data.url;
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        console.error('Checkout error:', data);
+        alert(`Error: ${data.error || 'Could not create checkout session. Please try again.'}`);
+      }
     } catch (e) {
+      console.error('Checkout fetch error:', e);
       alert("Something went wrong. Please try again.");
     } finally {
       setLoading(false);

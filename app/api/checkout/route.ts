@@ -27,6 +27,7 @@ export async function POST(req: NextRequest) {
   const isSubscription = tier !== "course";
   const baseUrl = process.env.NEXT_PUBLIC_URL || "https://apextradingsystems.io";
 
+  try {
   const session = await stripe.checkout.sessions.create({
     mode: isSubscription ? "subscription" : "payment",
     line_items: [{ price: PRICES[tier], quantity: 1 }],
@@ -50,4 +51,9 @@ export async function POST(req: NextRequest) {
   });
 
   return NextResponse.json({ url: session.url });
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    console.error('Stripe checkout error:', message);
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }
