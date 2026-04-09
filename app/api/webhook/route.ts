@@ -7,6 +7,13 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN!;
 const GUILD_ID = "1002258740516491296";
+const ANNOUNCEMENTS_CHANNEL = "1481922637612716063";
+
+const TIER_NAMES: Record<string, string> = {
+  apex: "📚 Apex Member",
+  elite: "👑 Elite Member",
+  course: "📘 Course Only",
+};
 
 async function addDiscordRole(userId: string, roleId: string) {
   if (!userId) return;
@@ -27,6 +34,31 @@ async function removeDiscordRole(userId: string, roleId: string) {
   });
 }
 
+async function postAnnouncement(tier: string, isCancel = false) {
+  const tierName = TIER_NAMES[tier] || tier;
+
+  const content = isCancel
+    ? null
+    : tier === "elite"
+    ? `🎉 **A new Elite member just joined Apex Trading Systems!**\n\nWelcome to the top tier. Live alerts, mentorship, and weekly voice sessions await. Let's get it. 👑\n\n<#1482063220498763890> is live — stay locked in.`
+    : tier === "apex"
+    ? `📚 **A new Apex Member just joined!**\n\nFull course access, daily bias, signals, and weekly recaps — all yours. Welcome to the community. Let's build that edge. ⚡`
+    : tier === "course"
+    ? `📘 **Someone just grabbed lifetime Course access!**\n\nAll 9 modules, lifetime updates. Smart investment. Welcome to Apex Trading Systems. 🙌`
+    : null;
+
+  if (!content) return;
+
+  await fetch(`https://discord.com/api/v10/channels/${ANNOUNCEMENTS_CHANNEL}/messages`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bot ${DISCORD_BOT_TOKEN}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ content }),
+  });
+}
+
 export async function POST(req: NextRequest) {
   const body = await req.text();
   const sig = req.headers.get("stripe-signature")!;
@@ -40,10 +72,16 @@ export async function POST(req: NextRequest) {
 
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as Stripe.Checkout.Session;
-    const { discordUserId, discordRoleId } = session.metadata || {};
+    const { discordUserId, discordRoleId, tier } = session.metadata || {};
+
     if (discordUserId && discordRoleId) {
       await addDiscordRole(discordUserId, discordRoleId);
       console.log(`✅ Role ${discordRoleId} assigned to Discord user ${discordUserId}`);
+    }
+
+    if (tier) {
+      await postAnnouncement(tier);
+      console.log(`✅ Announcement posted for tier: ${tier}`);
     }
   }
 
@@ -52,7 +90,7 @@ export async function POST(req: NextRequest) {
     const { discordUserId, discordRoleId } = sub.metadata || {};
     if (discordUserId && discordRoleId) {
       await removeDiscordRole(discordUserId, discordRoleId);
-      console.log(`❌ Role ${discordRoleId} removed from Discord user ${discordUserId}`);
+      console.log(`❌ Role removed from Discord user ${discordUserId}`);
     }
   }
 
