@@ -86,9 +86,9 @@ export default function Home() {
         <div style={orb(350, 350, "rgba(212,175,55,0.04)", { bottom: 0, right: -80 })} />
 
         <div style={{ position: "relative", zIndex: 1, maxWidth: 860 }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(212,175,55,0.08)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", border: "1px solid rgba(212,175,55,0.2)", borderRadius: 999, padding: "7px 18px", marginBottom: 36 }}>
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: G, display: "inline-block" }} />
-            <span style={{ fontSize: 11, fontWeight: 700, color: G, letterSpacing: "0.12em", textTransform: "uppercase" as const }}>ES & NQ · ICT · 8AM ORB</span>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(255,255,255,0.05)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 999, padding: "6px 14px", marginBottom: 36 }}>
+            <span style={{ width: 5, height: 5, borderRadius: "50%", background: G, display: "inline-block", flexShrink: 0 }} />
+            <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.6)", letterSpacing: "0.08em" }}>ES & NQ &nbsp;·&nbsp; ICT &nbsp;·&nbsp; 8AM ORB</span>
           </div>
 
           <h1 style={{ fontSize: "clamp(52px, 10vw, 96px)", fontWeight: 900, lineHeight: 1.02, letterSpacing: "-0.04em", marginBottom: 24 }}>
