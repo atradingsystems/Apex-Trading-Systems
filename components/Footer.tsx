@@ -12,8 +12,9 @@ export default function Footer() {
         .footer-link { color: rgba(255,255,255,0.4) !important; text-decoration: none !important; font-size: 14px; transition: color 0.2s; }
         .footer-link:hover { color: rgba(255,255,255,0.8) !important; }
         .footer-label { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.25); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; }
-        @media (max-width: 600px) {
-          .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+        @media (max-width: 640px) {
+          .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+          .footer-brand { grid-column: 1 / -1; }
         }
       `}</style>
 
@@ -25,7 +26,7 @@ export default function Footer() {
           marginBottom: 64,
         }}>
           {/* Brand */}
-          <div>
+          <div className="footer-brand">
             <div style={{ marginBottom: 16 }}>
               <span style={{ color: "#D4AF37", fontWeight: 900, fontSize: 17, letterSpacing: "-0.02em" }}>APEX</span>
               <span style={{ color: "rgba(255,255,255,0.25)", fontWeight: 300, fontSize: 13, marginLeft: 8, letterSpacing: "0.05em" }}>TRADING SYSTEMS</span>
