@@ -10,12 +10,12 @@ const glass: React.CSSProperties = {
 };
 
 const methodology = [
-  { title: "Market Structure First", desc: "Before any trade, you understand the HTF bias. Bullish or bearish. No ambiguity. Every trade aligns with higher timeframe structure." },
-  { title: "Liquidity Drives Everything", desc: "We don't chase breakouts. We study where stop losses are resting and wait for price to sweep those levels before positioning." },
-  { title: "FVGs as Entry Precision", desc: "Fair Value Gaps give us exact entry zones after a liquidity sweep. Not guessing — reading the imbalance left by institutional movement." },
-  { title: "The 8AM ORB Edge", desc: "Our flagship setup. The Opening Range forms 8:00–8:30AM. Wait for the sweep, enter on the FVG, target the opposite liquidity pool." },
-  { title: "Risk is Non-Negotiable", desc: "Every trade is sized to a fixed percentage of capital. Daily limits. Drawdown rules. No exceptions. The account grows slowly — and stays grown." },
-  { title: "Prop Firm Ready", desc: "The entire system is built to work within prop firm evaluation constraints. Pass your eval and scale to serious capital." },
+  { icon: "📐", num: "01", title: "Market Structure First", desc: "Before any trade, you understand the HTF bias. Bullish or bearish. No ambiguity. Every trade aligns with higher timeframe structure." },
+  { icon: "💧", num: "02", title: "Liquidity Drives Everything", desc: "We don't chase breakouts. We study where stop losses are resting and wait for price to sweep those levels before positioning." },
+  { icon: "⚡", num: "03", title: "FVGs as Entry Precision", desc: "Fair Value Gaps give us exact entry zones after a liquidity sweep. Not guessing — reading the imbalance left by institutional movement." },
+  { icon: "🕗", num: "04", title: "The 8AM ORB Edge", desc: "Our flagship setup. The Opening Range forms 8:00–8:30AM. Wait for the sweep, enter on the FVG, target the opposite liquidity pool." },
+  { icon: "🛡️", num: "05", title: "Risk is Non-Negotiable", desc: "Every trade is sized to a fixed percentage of capital. Daily limits. Drawdown rules. No exceptions. The account grows slowly — and stays grown." },
+  { icon: "🏦", num: "06", title: "Prop Firm Ready", desc: "The entire system is built to work within prop firm evaluation constraints. Pass your eval and scale to serious capital." },
 ];
 
 export default function About() {
@@ -81,10 +81,24 @@ export default function About() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px,1fr))", gap: 12 }}>
             {methodology.map(item => (
-              <div key={item.title} style={{ ...glass, padding: "28px 28px" }}>
-                <div style={{ width: 3, height: 28, background: G, borderRadius: 2, marginBottom: 16 }} />
-                <h3 style={{ fontWeight: 700, fontSize: 17, marginBottom: 10, letterSpacing: "-0.02em" }}>{item.title}</h3>
-                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14, lineHeight: 1.7 }}>{item.desc}</p>
+              <div key={item.title} style={{
+                background: "rgba(255,255,255,0.03)",
+                backdropFilter: "blur(24px)",
+                WebkitBackdropFilter: "blur(24px)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: 20,
+                padding: "32px",
+                position: "relative" as const,
+                overflow: "hidden" as const,
+              }}>
+                {/* subtle gold top border */}
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.4), transparent)" }} />
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
+                  <span style={{ fontSize: 32 }}>{item.icon}</span>
+                  <span style={{ fontSize: 12, fontWeight: 800, color: "rgba(212,175,55,0.4)", letterSpacing: "0.1em" }}>{item.num}</span>
+                </div>
+                <h3 style={{ fontWeight: 800, fontSize: 18, marginBottom: 12, letterSpacing: "-0.02em", color: "#fff" }}>{item.title}</h3>
+                <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 14, lineHeight: 1.75 }}>{item.desc}</p>
               </div>
             ))}
           </div>
