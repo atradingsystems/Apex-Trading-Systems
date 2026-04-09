@@ -4,17 +4,17 @@ const DISCORD = "https://discord.gg/83VwHsTbs";
 const G = "#D4AF37";
 
 const glass: React.CSSProperties = {
-  background: "rgba(255,255,255,0.04)",
-  backdropFilter: "blur(24px) saturate(180%)",
-  WebkitBackdropFilter: "blur(24px) saturate(180%)",
+  background: "#0d0d0d",
+  
+  
   border: "1px solid rgba(255,255,255,0.1)",
   borderRadius: 20,
 };
 
 const glassGold: React.CSSProperties = {
-  background: "rgba(212,175,55,0.08)",
-  backdropFilter: "blur(24px) saturate(180%)",
-  WebkitBackdropFilter: "blur(24px) saturate(180%)",
+  background: "#120f00",
+  
+  
   border: "1px solid rgba(212,175,55,0.3)",
   borderRadius: 20,
   boxShadow: "0 0 60px rgba(212,175,55,0.12)",
@@ -33,8 +33,8 @@ const btnGold: React.CSSProperties = {
 
 const btnGlass: React.CSSProperties = {
   background: "rgba(255,255,255,0.08)",
-  backdropFilter: "blur(20px)",
-  WebkitBackdropFilter: "blur(20px)",
+  
+  
   border: "1px solid rgba(255,255,255,0.15)",
   borderRadius: 999,
   color: "#fff",
@@ -86,7 +86,7 @@ export default function Home() {
         <div style={orb(350, 350, "rgba(212,175,55,0.04)", { bottom: 0, right: -80 })} />
 
         <div style={{ position: "relative", zIndex: 1, maxWidth: 860 }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(255,255,255,0.05)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 999, padding: "6px 14px", marginBottom: 36 }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(255,255,255,0.05)",   border: "1px solid rgba(255,255,255,0.1)", borderRadius: 999, padding: "6px 14px", marginBottom: 36 }}>
             <span style={{ width: 5, height: 5, borderRadius: "50%", background: G, display: "inline-block", flexShrink: 0 }} />
             <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.6)", letterSpacing: "0.08em" }}>ES & NQ &nbsp;·&nbsp; ICT &nbsp;·&nbsp; 8AM ORB</span>
           </div>

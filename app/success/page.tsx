@@ -2,9 +2,9 @@ const DISCORD = "https://discord.gg/83VwHsTbs";
 const G = "#D4AF37";
 
 const glass: React.CSSProperties = {
-  background: "rgba(255,255,255,0.03)",
-  backdropFilter: "blur(24px) saturate(180%)",
-  WebkitBackdropFilter: "blur(24px) saturate(180%)",
+  background: "#0a0a0a",
+  
+  
   border: "1px solid rgba(255,255,255,0.08)",
   borderRadius: 20,
   position: "relative" as const,

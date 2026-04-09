@@ -2,9 +2,9 @@ const DISCORD = "https://discord.gg/83VwHsTbs";
 const G = "#D4AF37";
 
 const glass: React.CSSProperties = {
-  background: "rgba(255,255,255,0.04)",
-  backdropFilter: "blur(24px) saturate(180%)",
-  WebkitBackdropFilter: "blur(24px) saturate(180%)",
+  background: "#0d0d0d",
+  
+  
   border: "1px solid rgba(255,255,255,0.1)",
   borderRadius: 20,
 };
@@ -82,7 +82,7 @@ export default function About() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px,1fr))", gap: 12 }}>
             {methodology.map(item => (
               <div key={item.title} style={{
-                background: "rgba(255,255,255,0.03)",
+                background: "#0a0a0a",
                 backdropFilter: "blur(24px)",
                 WebkitBackdropFilter: "blur(24px)",
                 border: "1px solid rgba(255,255,255,0.08)",

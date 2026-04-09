@@ -5,17 +5,17 @@ const DISCORD = "https://discord.gg/83VwHsTbs";
 const G = "#D4AF37";
 
 const glass: React.CSSProperties = {
-  background: "rgba(255,255,255,0.04)",
-  backdropFilter: "blur(24px) saturate(180%)",
-  WebkitBackdropFilter: "blur(24px) saturate(180%)",
+  background: "#0d0d0d",
+  
+  
   border: "1px solid rgba(255,255,255,0.1)",
   borderRadius: 20,
 };
 
 const glassGold: React.CSSProperties = {
-  background: "rgba(212,175,55,0.08)",
-  backdropFilter: "blur(24px) saturate(180%)",
-  WebkitBackdropFilter: "blur(24px) saturate(180%)",
+  background: "#120f00",
+  
+  
   border: "1px solid rgba(212,175,55,0.3)",
   borderRadius: 20,
   boxShadow: "0 0 60px rgba(212,175,55,0.12)",
@@ -35,8 +35,8 @@ const btnGold: React.CSSProperties = {
 
 const btnGlass: React.CSSProperties = {
   background: "rgba(255,255,255,0.06)",
-  backdropFilter: "blur(20px)",
-  WebkitBackdropFilter: "blur(20px)",
+  
+  
   border: "1px solid rgba(255,255,255,0.12)",
   borderRadius: 999,
   color: "#fff",
