@@ -26,6 +26,23 @@ async function addDiscordRole(userId: string, roleId: string) {
   });
 }
 
+async function assignRoleByUsername(username: string, roleId: string) {
+  // Fetch guild members and find by username
+  const res = await fetch(`https://discord.com/api/v10/guilds/${GUILD_ID}/members?limit=1000`, {
+    headers: { Authorization: `Bot ${DISCORD_BOT_TOKEN}` },
+  });
+  const members = await res.json() as Array<{ user: { id: string; username: string } }>;
+  const member = members.find(m =>
+    m.user.username.toLowerCase() === username.toLowerCase()
+  );
+  if (member) {
+    await addDiscordRole(member.user.id, roleId);
+    console.log(`✅ Role assigned to ${member.user.username} (${member.user.id})`);
+  } else {
+    console.error(`❌ Could not find Discord member: ${username}`);
+  }
+}
+
 async function removeDiscordRole(userId: string, roleId: string) {
   if (!userId) return;
   await fetch(`https://discord.com/api/v10/guilds/${GUILD_ID}/members/${userId}/roles/${roleId}`, {
@@ -74,9 +91,17 @@ export async function POST(req: NextRequest) {
     const session = event.data.object as Stripe.Checkout.Session;
     const { discordUserId, discordRoleId, tier } = session.metadata || {};
 
+    // Get Discord username from custom field
+    const discordUsernameField = session.custom_fields?.find(f => f.key === "discord_username");
+    const discordUsername = discordUsernameField?.text?.value || "";
+
     if (discordUserId && discordRoleId) {
       await addDiscordRole(discordUserId, discordRoleId);
       console.log(`✅ Role ${discordRoleId} assigned to Discord user ${discordUserId}`);
+    } else if (discordUsername && discordRoleId) {
+      // Fall back to username lookup
+      await assignRoleByUsername(discordUsername, discordRoleId);
+      console.log(`✅ Role assigned to Discord username: ${discordUsername}`);
     }
 
     if (tier) {

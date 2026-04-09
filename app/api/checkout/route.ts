@@ -18,7 +18,7 @@ const DISCORD_ROLES: Record<string, string> = {
 };
 
 export async function POST(req: NextRequest) {
-  const { tier, discordUserId } = await req.json();
+  const { tier, discordUserId, discordUsername } = await req.json();
 
   if (!tier || !PRICES[tier]) {
     return NextResponse.json({ error: "Invalid tier" }, { status: 400 });
@@ -35,8 +35,17 @@ export async function POST(req: NextRequest) {
     metadata: {
       tier,
       discordUserId: discordUserId || "",
+      discordUsername: discordUsername || "",
       discordRoleId: DISCORD_ROLES[tier],
     },
+    custom_fields: [
+      {
+        key: "discord_username",
+        label: { type: "custom", custom: "Your Discord Username" },
+        type: "text",
+        optional: false,
+      }
+    ],
     allow_promotion_codes: true,
   });
 
