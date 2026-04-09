@@ -52,12 +52,12 @@ export default function Navbar() {
                 {label}
               </Link>
             ))}
-            <a href="https://discord.gg/83VwHsTbs" target="_blank" rel="noopener noreferrer"
-              className="btn-gold"
-              style={{
+            <a href="https://discord.gg/83VwHsTbs" target="_blank" rel="noopener noreferrer" style={{
+                background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)",
+                borderRadius: 999,
                 color: "#000", fontWeight: 700, fontSize: 13,
-                padding: "8px 18px", textDecoration: "none",
-                letterSpacing: "0.02em",
+                padding: "9px 20px", textDecoration: "none",
+                letterSpacing: "0.02em", border: "none",
               }}>
               Join Free
             </a>
@@ -92,8 +92,7 @@ export default function Navbar() {
               <Link key={label} href={href} style={{ color: "#fff", fontSize: 16, textDecoration: "none" }} onClick={() => setOpen(false)}>{label}</Link>
             ))}
             <a href="https://discord.gg/83VwHsTbs" target="_blank" rel="noopener noreferrer"
-              className="btn-gold"
-              style={{ color: "#000", fontWeight: 700, padding: "13px 20px", textDecoration: "none", textAlign: "center", fontSize: 15 }}
+              style={{ background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)", borderRadius: 999, color: "#000", fontWeight: 700, padding: "13px 20px", textDecoration: "none", textAlign: "center" as const, fontSize: 15 }}
               onClick={() => setOpen(false)}>
               Join Free →
             </a>
