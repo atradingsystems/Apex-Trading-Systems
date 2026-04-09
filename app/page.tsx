@@ -43,15 +43,9 @@ const btnGlass: React.CSSProperties = {
   display: "inline-block",
 };
 
-const orb = (w: number, h: number, color: string, style: React.CSSProperties = {}): React.CSSProperties => ({
-  position: "absolute",
-  width: w,
-  height: h,
-  borderRadius: "50%",
-  background: color,
-  filter: "blur(80px)",
-  pointerEvents: "none",
-  ...style,
+// Orbs removed for Safari performance - using CSS gradients instead
+const orb = (_w: number, _h: number, _color: string, _style: React.CSSProperties = {}): React.CSSProperties => ({
+  display: "none",
 });
 
 const features = [
@@ -81,7 +75,7 @@ export default function Home() {
     <main style={{ background: "#000", color: "#fff", fontFamily: "inherit", overflowX: "hidden" }}>
 
       {/* HERO */}
-      <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "140px 24px 100px", position: "relative", overflow: "hidden" }}>
+      <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "140px 24px 100px", position: "relative", overflow: "hidden", background: "radial-gradient(ellipse 100% 60% at 50% 0%, rgba(212,175,55,0.07) 0%, transparent 70%)" }}>
         <div style={orb(600, 600, "rgba(212,175,55,0.08)", { top: -150, left: "50%", transform: "translateX(-50%)" })} />
         <div style={orb(350, 350, "rgba(212,175,55,0.04)", { bottom: 0, right: -80 })} />
 
