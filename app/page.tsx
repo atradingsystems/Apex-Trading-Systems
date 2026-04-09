@@ -1,6 +1,8 @@
 import Link from "next/link";
 import CheckoutButton from "@/components/CheckoutButton";
 import EmailCapture from "@/components/EmailCapture";
+import CountUp from "@/components/CountUp";
+import FadeIn from "@/components/FadeIn";
 
 const DISCORD = "https://discord.gg/83VwHsTbs";
 const G = "#D4AF37";
@@ -114,12 +116,30 @@ export default function Home() {
       {/* STATS */}
       <section style={{ padding: "40px 24px 80px" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8 }}>
-          {[["24+","Members"],["9","Modules"],["ES & NQ","Focused"],["ICT","Method"]].map(([v,l]) => (
-            <div key={l} style={{ ...glass, padding: "20px 10px", textAlign: "center" }}>
-              <div style={{ fontSize: "clamp(20px,4vw,28px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}>{v}</div>
-              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>{l}</div>
+          <FadeIn delay={0}>
+            <div style={{ ...glass, padding: "20px 10px", textAlign: "center" }}>
+              <div style={{ fontSize: "clamp(20px,4vw,28px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}><CountUp end={24} suffix="+" /></div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>Members</div>
             </div>
-          ))}
+          </FadeIn>
+          <FadeIn delay={100}>
+            <div style={{ ...glass, padding: "20px 10px", textAlign: "center" }}>
+              <div style={{ fontSize: "clamp(20px,4vw,28px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}><CountUp end={9} /></div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>Modules</div>
+            </div>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <div style={{ ...glass, padding: "20px 10px", textAlign: "center" }}>
+              <div style={{ fontSize: "clamp(20px,4vw,28px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}>ES & NQ</div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>Focused</div>
+            </div>
+          </FadeIn>
+          <FadeIn delay={300}>
+            <div style={{ ...glass, padding: "20px 10px", textAlign: "center" }}>
+              <div style={{ fontSize: "clamp(20px,4vw,28px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}>ICT</div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>Method</div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -132,10 +152,12 @@ export default function Home() {
           </h2>
           <div style={{ display: "flex", flexDirection: "column" as const, gap: 14 }}>
             {painPoints.map((p, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 14, textAlign: "left" as const, background: "#0d0d0d", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 12, padding: "16px 20px" }}>
-                <span style={{ color: "rgba(255,80,80,0.8)", fontSize: 16, marginTop: 1, flexShrink: 0 }}>✕</span>
-                <span style={{ color: "rgba(255,255,255,0.6)", fontSize: 15 }}>{p}</span>
-              </div>
+              <FadeIn key={i} delay={i * 80} direction="left">
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 14, textAlign: "left" as const, background: "#0d0d0d", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 12, padding: "16px 20px" }}>
+                  <span style={{ color: "rgba(255,80,80,0.8)", fontSize: 16, marginTop: 1, flexShrink: 0 }}>✕</span>
+                  <span style={{ color: "rgba(255,255,255,0.6)", fontSize: 15 }}>{p}</span>
+                </div>
+              </FadeIn>
             ))}
           </div>
           <p style={{ marginTop: 40, color: "rgba(255,255,255,0.4)", fontSize: 17, lineHeight: 1.65 }}>
