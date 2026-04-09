@@ -1,3 +1,4 @@
+import CheckoutButton from "@/components/CheckoutButton";
 import Link from "next/link";
 
 const DISCORD = "https://discord.gg/83VwHsTbs";
@@ -55,6 +56,7 @@ const tiers = [
     notIncluded: ["Full 9-module course", "Daily bias & trade ideas", "Live trade alerts", "Elite setups & mentorship"],
     cta: "Join Free",
     highlight: false,
+    stripeKey: "free",
   },
   {
     name: "Apex Member",
@@ -65,6 +67,7 @@ const tiers = [
     notIncluded: ["Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions"],
     cta: "Get Apex Access",
     highlight: false,
+    stripeKey: "apex",
   },
   {
     name: "Elite",
@@ -75,6 +78,7 @@ const tiers = [
     notIncluded: [],
     cta: "Go Elite",
     highlight: true,
+    stripeKey: "elite",
   },
   {
     name: "Course Only",
@@ -85,6 +89,7 @@ const tiers = [
     notIncluded: ["Community channels", "Live alerts", "Mentorship"],
     cta: "Get Lifetime Access",
     highlight: false,
+    stripeKey: "course",
   },
 ];
 
@@ -157,15 +162,16 @@ export default function Pricing() {
                   ))}
                 </ul>
 
-                <a href={DISCORD} target="_blank" rel="noopener noreferrer"
+                <CheckoutButton
+                  tier={tier.stripeKey}
+                  label={tier.cta}
                   style={{
                     ...(tier.highlight ? btnGold : btnGlass),
                     padding: "13px 20px",
                     fontSize: 13,
                     letterSpacing: "-0.01em",
-                  }}>
-                  {tier.cta}
-                </a>
+                  }}
+                />
               </div>
             ))}
           </div>
