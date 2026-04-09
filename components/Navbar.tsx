@@ -25,9 +25,9 @@ export default function Navbar() {
         maxWidth: 1200, margin: "0 auto",
         height: 64, display: "flex", alignItems: "center", justifyContent: "space-between",
       }}>
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 8, whiteSpace: "nowrap" }}>
-          <span style={{ color: "#D4AF37", fontWeight: 900, fontSize: 18, letterSpacing: "-0.02em" }}>APEX</span>
-          <span style={{ color: "rgba(255,255,255,0.4)", fontWeight: 300, fontSize: 13, letterSpacing: "0.08em" }} className="nav-subtitle">TRADING SYSTEMS</span>
+        <Link href="/" style={{ textDecoration: "none", whiteSpace: "nowrap" }}>
+          <span style={{ color: "#D4AF37", fontWeight: 900, fontSize: 16, letterSpacing: "0.05em" }}>APEX </span>
+          <span style={{ color: "#fff", fontWeight: 600, fontSize: 16, letterSpacing: "0.05em" }}>TRADING SYSTEMS</span>
         </Link>
 
         <div style={{ display: "flex", alignItems: "center", gap: 32 }} className="hidden-mobile">
@@ -84,7 +84,6 @@ export default function Navbar() {
         @media (max-width: 640px) {
           .hidden-mobile { display: none !important; }
           .show-mobile { display: block !important; }
-          .nav-subtitle { display: none !important; }
         }
         @media (min-width: 641px) {
           .show-mobile { display: none !important; }
