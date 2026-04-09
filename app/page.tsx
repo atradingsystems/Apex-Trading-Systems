@@ -335,9 +335,10 @@ export default function Home() {
           <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{
             display: "inline-block",
             background: G, color: "#000",
-            fontWeight: 800, fontSize: 17,
-            padding: "18px 44px", borderRadius: 980,
+            fontWeight: 800, fontSize: 16,
+            padding: "16px 40px", borderRadius: 999,
             textDecoration: "none", letterSpacing: "-0.01em",
+            border: "none",
           }}>
             Join the Community →
           </a>
