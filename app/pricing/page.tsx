@@ -1,188 +1,211 @@
+import Link from "next/link";
+
 const DISCORD = "https://discord.gg/83VwHsTbs";
+const G = "#D4AF37";
+
+const glass: React.CSSProperties = {
+  background: "rgba(255,255,255,0.04)",
+  backdropFilter: "blur(24px) saturate(180%)",
+  WebkitBackdropFilter: "blur(24px) saturate(180%)",
+  border: "1px solid rgba(255,255,255,0.1)",
+  borderRadius: 20,
+};
+
+const glassGold: React.CSSProperties = {
+  background: "rgba(212,175,55,0.08)",
+  backdropFilter: "blur(24px) saturate(180%)",
+  WebkitBackdropFilter: "blur(24px) saturate(180%)",
+  border: "1px solid rgba(212,175,55,0.3)",
+  borderRadius: 20,
+  boxShadow: "0 0 60px rgba(212,175,55,0.12)",
+};
+
+const btnGold: React.CSSProperties = {
+  background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)",
+  borderRadius: 999,
+  color: "#000",
+  fontWeight: 800,
+  textDecoration: "none",
+  display: "block",
+  textAlign: "center",
+  border: "none",
+  cursor: "pointer",
+};
+
+const btnGlass: React.CSSProperties = {
+  background: "rgba(255,255,255,0.06)",
+  backdropFilter: "blur(20px)",
+  WebkitBackdropFilter: "blur(20px)",
+  border: "1px solid rgba(255,255,255,0.12)",
+  borderRadius: 999,
+  color: "#fff",
+  fontWeight: 600,
+  textDecoration: "none",
+  display: "block",
+  textAlign: "center",
+};
 
 const tiers = [
   {
     name: "Free",
     price: "$0",
     period: "",
-    desc: "Get oriented and explore the community.",
-    features: {
-      "Discord community": true,
-      "General chat & market talk": true,
-      "Modules 0–3": true,
-      "Rules & orientation": true,
-      "Full 9-module course": false,
-      "Daily bias & trade ideas": false,
-      "Signals & commentary": false,
-      "Weekly recap": false,
-      "Live trade alerts": false,
-      "Elite trade setups": false,
-      "Mentorship access": false,
-      "Weekly voice sessions": false,
-    },
+    desc: "Get started. No card needed.",
+    features: ["Discord community", "General chat & market talk", "Modules 0–3", "Rules & orientation"],
+    notIncluded: ["Full 9-module course", "Daily bias & trade ideas", "Live trade alerts", "Elite setups & mentorship"],
     cta: "Join Free",
-    href: DISCORD,
     highlight: false,
   },
   {
     name: "Apex Member",
     price: "$49",
     period: "/mo",
-    desc: "Full course access plus daily content.",
-    features: {
-      "Discord community": true,
-      "General chat & market talk": true,
-      "Modules 0–3": true,
-      "Rules & orientation": true,
-      "Full 9-module course": true,
-      "Daily bias & trade ideas": true,
-      "Signals & commentary": true,
-      "Weekly recap": true,
-      "Live trade alerts": false,
-      "Elite trade setups": false,
-      "Mentorship access": false,
-      "Weekly voice sessions": false,
-    },
+    desc: "Full course + daily content.",
+    features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Signals & commentary", "Weekly recap & review"],
+    notIncluded: ["Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions"],
     cta: "Get Apex Access",
-    href: DISCORD,
     highlight: false,
   },
   {
     name: "Elite",
     price: "$149",
     period: "/mo",
-    desc: "Everything plus live alerts and mentorship.",
-    features: {
-      "Discord community": true,
-      "General chat & market talk": true,
-      "Modules 0–3": true,
-      "Rules & orientation": true,
-      "Full 9-module course": true,
-      "Daily bias & trade ideas": true,
-      "Signals & commentary": true,
-      "Weekly recap": true,
-      "Live trade alerts": true,
-      "Elite trade setups": true,
-      "Mentorship access": true,
-      "Weekly voice sessions": true,
-    },
+    desc: "Live alerts, mentorship & voice.",
+    features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship access", "Weekly voice sessions", "Priority support"],
+    notIncluded: [],
     cta: "Go Elite",
-    href: DISCORD,
     highlight: true,
+  },
+  {
+    name: "Course Only",
+    price: "$297",
+    period: " once",
+    desc: "Lifetime module access.",
+    features: ["All 9 course modules", "Lifetime access", "Future updates included", "Course Q&A channel"],
+    notIncluded: ["Community channels", "Live alerts", "Mentorship"],
+    cta: "Get Lifetime Access",
+    highlight: false,
   },
 ];
 
 const faqs = [
-  {
-    q: "Do I need trading experience to join?",
-    a: "No. The curriculum starts from absolute basics in Module 0. If you know what a candlestick is, you're ready to start.",
-  },
-  {
-    q: "What platform do I need to trade MES?",
-    a: "We recommend NinjaTrader or Tradovate. Both are free to start. Module 0 covers the full setup.",
-  },
-  {
-    q: "What's the difference between Apex Member and Course Only?",
-    a: "Apex Member gives you the course plus ongoing daily content, signals, and the active community. Course Only is lifetime access to the modules without the recurring community benefits.",
-  },
-  {
-    q: "Can I cancel my subscription?",
-    a: "Yes — cancel anytime. No contracts, no questions asked. Your access continues until the end of the billing period.",
-  },
-  {
-    q: "Are the live trade alerts real-time?",
-    a: "Yes. Elite members receive live alerts directly in the Discord #elite-trade-setups channel with full entry, stop, and target details.",
-  },
+  { q: "Do I need trading experience to join?", a: "No. The curriculum starts from absolute basics in Module 0. If you know what a candlestick is, you're ready." },
+  { q: "What platform do I need to trade ES & NQ?", a: "We recommend NinjaTrader or Tradovate. Both are free to start. Module 0 covers the full setup." },
+  { q: "What's the difference between Apex Member and Course Only?", a: "Apex Member includes the full course plus ongoing daily signals, content, and community. Course Only is lifetime module access without the recurring community." },
+  { q: "Can I cancel my subscription?", a: "Yes — cancel anytime. No contracts, no questions asked. Access continues until the end of your billing period." },
+  { q: "Are the live trade alerts real-time?", a: "Yes. Elite members receive live alerts directly in the Discord #elite-trade-setups channel with full entry, stop, and target details." },
 ];
 
 export default function Pricing() {
   return (
-    <main className="min-h-screen bg-black text-white pt-24">
+    <main style={{ background: "#000", color: "#fff", fontFamily: "inherit", overflowX: "hidden" }}>
 
-      {/* Hero */}
-      <section className="py-16 px-6 text-center border-b border-white/10">
-        <div className="max-w-2xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-black mb-4">
-            Simple, <span className="gold-gradient">Honest</span> Pricing
+      {/* HERO */}
+      <section style={{ paddingTop: 120, paddingBottom: 60, paddingLeft: 24, paddingRight: 24, textAlign: "center", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+        <div style={{ maxWidth: 600, margin: "0 auto" }}>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: G, marginBottom: 16 }}>Membership</p>
+          <h1 style={{ fontSize: "clamp(40px,8vw,72px)", fontWeight: 900, letterSpacing: "-0.04em", marginBottom: 16 }}>
+            Simple, <span style={{ color: G }}>honest</span> pricing.
           </h1>
-          <p className="text-gray-400 text-lg">Start free. Upgrade when you&apos;re ready. Cancel anytime.</p>
+          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 17 }}>Start free. Upgrade when you&apos;re ready. Cancel anytime.</p>
         </div>
       </section>
 
-      {/* Pricing Cards */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {tiers.map((tier) => (
-            <div key={tier.name}
-              className={`relative rounded-xl p-6 flex flex-col ${
-                tier.highlight ? "bg-gold/10 border-2 border-gold" : "bg-white/5 border border-white/10"
-              }`}>
-              {tier.highlight && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-xs font-black px-4 py-1 rounded-full uppercase tracking-wider">
-                  Most Popular
-                </div>
-              )}
-              <h3 className={`font-bold text-xl mb-1 ${tier.highlight ? "text-gold" : "text-white"}`}>{tier.name}</h3>
-              <div className="flex items-end gap-1 mb-2">
-                <span className="text-4xl font-black">{tier.price}</span>
-                <span className="text-gray-400 text-sm mb-1">{tier.period}</span>
-              </div>
-              <p className="text-gray-400 text-sm mb-6">{tier.desc}</p>
-              <ul className="flex-1 space-y-3 mb-6">
-                {Object.entries(tier.features).map(([feature, included]) => (
-                  <li key={feature} className="flex items-center gap-3 text-sm">
-                    <span className={included ? "text-gold" : "text-white/20"}>
-                      {included ? "✓" : "✕"}
-                    </span>
-                    <span className={included ? "text-gray-300" : "text-white/30"}>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <a href={tier.href} target="_blank" rel="noopener noreferrer"
-                className={`text-center font-bold py-3 rounded text-sm transition ${
-                  tier.highlight
-                    ? "bg-gold text-black hover:bg-gold-light"
-                    : "border border-white/20 text-white hover:border-gold hover:text-gold"
-                }`}>
-                {tier.cta}
-              </a>
-            </div>
-          ))}
-        </div>
+      {/* PRICING CARDS */}
+      <section style={{ padding: "80px 24px", position: "relative" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px,1fr))", gap: 12 }}>
+            {tiers.map(tier => (
+              <div key={tier.name} style={{
+                ...(tier.highlight ? glassGold : glass),
+                position: "relative",
+                padding: "32px 28px",
+                display: "flex",
+                flexDirection: "column",
+              }}>
+                {tier.highlight && (
+                  <div style={{
+                    position: "absolute", top: -13, left: "50%", transform: "translateX(-50%)",
+                    background: G, color: "#000",
+                    fontSize: 10, fontWeight: 800,
+                    padding: "4px 16px", borderRadius: 999,
+                    letterSpacing: "0.1em", textTransform: "uppercase", whiteSpace: "nowrap",
+                  }}>Most Popular</div>
+                )}
 
-        {/* Course Only */}
-        <div className="max-w-5xl mx-auto mt-6">
-          <div className="bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-white font-bold text-xl mb-1">Course Only</h3>
-              <p className="text-gray-400 text-sm">Lifetime access to all 9 modules. No subscription required.</p>
-            </div>
-            <div className="flex items-center gap-6">
-              <div>
-                <span className="text-4xl font-black text-white">$297</span>
-                <span className="text-gray-400 text-sm ml-1">one-time</span>
+                <div style={{ marginBottom: 24 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: tier.highlight ? G : "rgba(255,255,255,0.4)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 12 }}>{tier.name}</div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 8 }}>
+                    <span style={{ fontSize: 48, fontWeight: 900, letterSpacing: "-0.04em" }}>{tier.price}</span>
+                    <span style={{ fontSize: 14, color: "rgba(255,255,255,0.3)" }}>{tier.period}</span>
+                  </div>
+                  <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)", lineHeight: 1.5 }}>{tier.desc}</p>
+                </div>
+
+                <ul style={{ flex: 1, listStyle: "none", padding: 0, marginBottom: 28 }}>
+                  {tier.features.map(f => (
+                    <li key={f} style={{ display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 11 }}>
+                      <span style={{ color: G, fontSize: 12, marginTop: 2, flexShrink: 0 }}>✓</span>
+                      <span style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", lineHeight: 1.5 }}>{f}</span>
+                    </li>
+                  ))}
+                  {tier.notIncluded.map(f => (
+                    <li key={f} style={{ display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 11 }}>
+                      <span style={{ color: "rgba(255,255,255,0.2)", fontSize: 12, marginTop: 2, flexShrink: 0 }}>✕</span>
+                      <span style={{ fontSize: 13, color: "rgba(255,255,255,0.2)", lineHeight: 1.5 }}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a href={DISCORD} target="_blank" rel="noopener noreferrer"
+                  style={{
+                    ...(tier.highlight ? btnGold : btnGlass),
+                    padding: "13px 20px",
+                    fontSize: 13,
+                    letterSpacing: "-0.01em",
+                  }}>
+                  {tier.cta}
+                </a>
               </div>
-              <a href={DISCORD} target="_blank" rel="noopener noreferrer"
-                className="border border-white/20 text-white font-bold px-6 py-3 rounded text-sm hover:border-gold hover:text-gold transition whitespace-nowrap">
-                Get Lifetime Access
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-6 border-t border-white/10">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="border-b border-white/10 pb-6">
-                <h3 className="text-white font-semibold text-lg mb-2">{faq.q}</h3>
-                <p className="text-gray-400 leading-relaxed">{faq.a}</p>
+      <section style={{ padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <div style={{ maxWidth: 720, margin: "0 auto" }}>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: G, marginBottom: 14, textAlign: "center" }}>FAQ</p>
+          <h2 style={{ fontSize: "clamp(32px,5vw,52px)", fontWeight: 900, letterSpacing: "-0.04em", textAlign: "center", marginBottom: 56 }}>Common questions.</h2>
+          <div>
+            {faqs.map((faq, i) => (
+              <div key={faq.q} style={{
+                borderBottom: i < faqs.length - 1 ? "1px solid rgba(255,255,255,0.07)" : "none",
+                padding: "28px 0",
+              }}>
+                <h3 style={{ fontWeight: 700, fontSize: 17, marginBottom: 12, letterSpacing: "-0.02em" }}>{faq.q}</h3>
+                <p style={{ color: "rgba(255,255,255,0.45)", lineHeight: 1.7, fontSize: 15 }}>{faq.a}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ padding: "100px 24px", textAlign: "center" }}>
+        <div style={{ maxWidth: 500, margin: "0 auto" }}>
+          <h2 style={{ fontSize: "clamp(32px,6vw,52px)", fontWeight: 900, letterSpacing: "-0.04em", marginBottom: 16 }}>
+            Start free today.
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 17, marginBottom: 36 }}>No credit card. No commitment. Just join.</p>
+          <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{
+            ...btnGold,
+            display: "inline-block",
+            fontSize: 16,
+            padding: "16px 40px",
+          }}>
+            Join the Community →
+          </a>
         </div>
       </section>
 
