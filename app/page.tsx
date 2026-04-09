@@ -8,6 +8,7 @@ const features = [
   { icon: "💧", title: "Liquidity & Fair Value Gaps", desc: "See the market the way smart money sees it. Hunt sweeps, trade FVGs with precision." },
   { icon: "🛡️", title: "Risk Management & Journaling", desc: "Position sizing, drawdown limits, and the journaling system that builds consistency." },
   { icon: "🏦", title: "Prop Firm Funding & Scaling", desc: "Pass your eval and trade institutional capital. We cover Apex Trader, Topstep, and more." },
+  { icon: "📚", title: "9-Module Curriculum", desc: "From TradingView setup to funded accounts. A structured path that builds real edge." },
 ];
 
 const tiers = [
@@ -15,13 +16,8 @@ const tiers = [
     name: "Free",
     price: "$0",
     period: "",
-    desc: "Start here. No credit card required.",
-    features: [
-      "Discord community access",
-      "General chat & market talk",
-      "Modules 0–3 (foundations)",
-      "Rules & guidelines",
-    ],
+    desc: "Start here. No credit card.",
+    features: ["Discord community", "General chat & market talk", "Modules 0–3 (foundations)", "Rules & guidelines"],
     cta: "Join Free",
     href: DISCORD,
     highlight: false,
@@ -30,15 +26,8 @@ const tiers = [
     name: "Apex Member",
     price: "$49",
     period: "/mo",
-    desc: "Full course + daily signals and recaps.",
-    features: [
-      "Everything in Free",
-      "All 9 course modules",
-      "Daily bias & trade ideas",
-      "Signals & commentary",
-      "Weekly recap & review",
-      "Performance tracking",
-    ],
+    desc: "Full course + daily signals.",
+    features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Signals & commentary", "Weekly recap & review"],
     cta: "Get Apex Access",
     href: DISCORD,
     highlight: false,
@@ -47,16 +36,8 @@ const tiers = [
     name: "Elite",
     price: "$149",
     period: "/mo",
-    desc: "Live alerts, mentorship, and voice sessions.",
-    features: [
-      "Everything in Apex",
-      "Live trade alerts",
-      "Elite trade setups",
-      "1-on-1 mentorship access",
-      "Weekly voice sessions",
-      "Elite lounge access",
-      "Priority support",
-    ],
+    desc: "Live alerts & mentorship.",
+    features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions", "Priority support"],
     cta: "Go Elite",
     href: DISCORD,
     highlight: true,
@@ -65,13 +46,8 @@ const tiers = [
     name: "Course Only",
     price: "$297",
     period: " one-time",
-    desc: "Lifetime access to all 9 modules.",
-    features: [
-      "All 9 course modules",
-      "Lifetime access",
-      "Future module updates",
-      "Course Q&A channel",
-    ],
+    desc: "Lifetime module access.",
+    features: ["All 9 course modules", "Lifetime access", "Future updates included", "Course Q&A channel"],
     cta: "Get Lifetime Access",
     href: DISCORD,
     highlight: false,
@@ -79,43 +55,71 @@ const tiers = [
 ];
 
 const testimonials = [
-  { name: "Marcus T.", role: "Apex Member", text: "The ORB strategy alone was worth the membership. Clear, repeatable, and it actually works on MES. Best trading community I've been part of." },
-  { name: "Jordan R.", role: "Elite Member", text: "The live alerts changed how I trade. Seeing the setups in real time alongside the education clicks in a way that solo learning never did." },
-  { name: "Devon K.", role: "Course Only", text: "9 modules of actual content — not fluff. The liquidity and FVG modules opened my eyes. Finally understand why price moves the way it does." },
-];
-
-const stats = [
-  { value: "24+", label: "Members" },
-  { value: "9", label: "Course Modules" },
-  { value: "MES", label: "Futures Focused" },
-  { value: "ICT", label: "Methodology" },
+  { name: "Marcus T.", role: "Apex Member", text: "The ORB strategy alone was worth the membership. Clear, repeatable, and it actually works on MES." },
+  { name: "Jordan R.", role: "Elite Member", text: "Seeing the live alerts in real time alongside the education clicks in a way solo learning never did." },
+  { name: "Devon K.", role: "Course Only", text: "9 modules of actual content — not fluff. The liquidity module opened my eyes. Finally understand why price moves." },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main style={{ background: "#000", color: "#fff", fontFamily: "'Inter', sans-serif" }}>
 
       {/* HERO */}
-      <section className="relative pt-32 pb-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/10 via-black to-black pointer-events-none" />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="inline-block border border-gold/40 text-gold text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-widest uppercase">
+      <section style={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "120px 24px 80px",
+        background: "radial-gradient(ellipse at top, #1a1400 0%, #000 60%)",
+        position: "relative",
+      }}>
+        <div style={{ maxWidth: 800, margin: "0 auto" }}>
+          <div style={{
+            display: "inline-block",
+            border: "1px solid #D4AF3766",
+            color: "#D4AF37",
+            fontSize: 11,
+            fontWeight: 700,
+            padding: "6px 18px",
+            borderRadius: 999,
+            marginBottom: 32,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+          }}>
             MES Futures · ICT · 8AM ORB
           </div>
-          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
+          <h1 style={{ fontSize: "clamp(48px, 10vw, 88px)", fontWeight: 900, lineHeight: 1.05, marginBottom: 24 }}>
             Master MES Futures.<br />
-            <span className="gold-gradient">Trade With Edge.</span>
+            <span style={{ color: "#D4AF37" }}>Trade With Edge.</span>
           </h1>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            ICT concepts, 8AM ORB strategy, and a community of serious traders. Built for those who want to trade like professionals — not gamble like retail.
+          <p style={{ color: "#888", fontSize: 18, lineHeight: 1.7, maxWidth: 560, margin: "0 auto 40px" }}>
+            ICT concepts, 8AM ORB strategy, and a community of serious traders. Built for those who want to trade like professionals.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={DISCORD} target="_blank" rel="noopener noreferrer"
-              className="bg-gold text-black font-bold px-8 py-4 rounded text-base hover:bg-gold-light transition">
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+            <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{
+              background: "#D4AF37",
+              color: "#000",
+              fontWeight: 800,
+              padding: "16px 36px",
+              borderRadius: 8,
+              fontSize: 16,
+              textDecoration: "none",
+              display: "inline-block",
+            }}>
               Join Free →
             </a>
-            <Link href="/pricing"
-              className="border border-white/20 text-white font-semibold px-8 py-4 rounded text-base hover:border-gold hover:text-gold transition">
+            <Link href="/pricing" style={{
+              border: "1px solid #ffffff33",
+              color: "#fff",
+              fontWeight: 600,
+              padding: "16px 36px",
+              borderRadius: 8,
+              fontSize: 16,
+              textDecoration: "none",
+              display: "inline-block",
+            }}>
               View Pricing
             </Link>
           </div>
@@ -123,84 +127,108 @@ export default function Home() {
       </section>
 
       {/* STATS BAR */}
-      <section className="border-y border-white/10 py-6 px-6">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {stats.map((s) => (
-            <div key={s.label}>
-              <div className="text-2xl font-black gold-gradient">{s.value}</div>
-              <div className="text-gray-500 text-xs uppercase tracking-wider mt-1">{s.label}</div>
+      <section style={{ borderTop: "1px solid #ffffff15", borderBottom: "1px solid #ffffff15", padding: "28px 24px" }}>
+        <div style={{ maxWidth: 700, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, textAlign: "center" }}>
+          {[
+            { v: "24+", l: "Members" },
+            { v: "9", l: "Modules" },
+            { v: "MES", l: "Futures" },
+            { v: "ICT", l: "Methodology" },
+          ].map(s => (
+            <div key={s.l}>
+              <div style={{ fontSize: 28, fontWeight: 900, color: "#D4AF37" }}>{s.v}</div>
+              <div style={{ fontSize: 11, color: "#666", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 4 }}>{s.l}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* WHAT WE TEACH */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black mb-4">What You&apos;ll Learn</h2>
-            <p className="text-gray-400 max-w-xl mx-auto">A complete system — from TradingView setup to passing a prop firm eval. No fluff. No indicators. Pure price action.</p>
+      <section style={{ padding: "100px 24px" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 64 }}>
+            <h2 style={{ fontSize: "clamp(32px, 6vw, 56px)", fontWeight: 900, marginBottom: 16 }}>What You&apos;ll Learn</h2>
+            <p style={{ color: "#888", maxWidth: 480, margin: "0 auto" }}>A complete system — from TradingView setup to passing a prop firm eval. No fluff. Pure price action.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((f) => (
-              <div key={f.title} className="bg-white/5 border border-white/10 rounded-xl p-6 card-hover">
-                <div className="text-3xl mb-4">{f.icon}</div>
-                <h3 className="text-white font-bold text-lg mb-2">{f.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 20 }}>
+            {features.map(f => (
+              <div key={f.title} style={{
+                background: "#0d0d0d",
+                border: "1px solid #ffffff15",
+                borderRadius: 16,
+                padding: "28px",
+                transition: "border-color 0.2s",
+              }}>
+                <div style={{ fontSize: 36, marginBottom: 16 }}>{f.icon}</div>
+                <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 10 }}>{f.title}</h3>
+                <p style={{ color: "#888", fontSize: 14, lineHeight: 1.7 }}>{f.desc}</p>
               </div>
             ))}
-            {/* 9 Modules card */}
-            <div className="bg-gold/10 border border-gold/30 rounded-xl p-6 card-hover">
-              <div className="text-3xl mb-4">📚</div>
-              <h3 className="text-gold font-bold text-lg mb-2">9-Module Curriculum</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">From TradingView setup to funded accounts. A structured path that builds real, lasting edge.</p>
-            </div>
           </div>
         </div>
       </section>
 
       {/* PRICING */}
-      <section id="pricing" className="py-24 px-6 bg-white/2">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black mb-4">Simple Pricing</h2>
-            <p className="text-gray-400 max-w-xl mx-auto">Start free. Upgrade when you&apos;re ready. No contracts, cancel anytime.</p>
+      <section style={{ padding: "100px 24px", background: "#050505", borderTop: "1px solid #ffffff10" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 64 }}>
+            <h2 style={{ fontSize: "clamp(32px, 6vw, 56px)", fontWeight: 900, marginBottom: 16 }}>Simple Pricing</h2>
+            <p style={{ color: "#888" }}>Start free. Upgrade when you&apos;re ready. Cancel anytime.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {tiers.map((tier) => (
-              <div key={tier.name}
-                className={`relative rounded-xl p-6 flex flex-col card-hover ${
-                  tier.highlight
-                    ? "bg-gold/10 border-2 border-gold"
-                    : "bg-white/5 border border-white/10"
-                }`}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 20 }}>
+            {tiers.map(tier => (
+              <div key={tier.name} style={{
+                background: tier.highlight ? "#1a1200" : "#0d0d0d",
+                border: tier.highlight ? "2px solid #D4AF37" : "1px solid #ffffff15",
+                borderRadius: 16,
+                padding: "28px",
+                display: "flex",
+                flexDirection: "column",
+                position: "relative",
+              }}>
                 {tier.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-xs font-black px-4 py-1 rounded-full uppercase tracking-wider">
-                    Most Popular
-                  </div>
+                  <div style={{
+                    position: "absolute",
+                    top: -14,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    background: "#D4AF37",
+                    color: "#000",
+                    fontSize: 10,
+                    fontWeight: 900,
+                    padding: "4px 14px",
+                    borderRadius: 999,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    whiteSpace: "nowrap",
+                  }}>Most Popular</div>
                 )}
-                <div className="mb-4">
-                  <h3 className={`font-bold text-lg mb-1 ${tier.highlight ? "text-gold" : "text-white"}`}>{tier.name}</h3>
-                  <div className="flex items-end gap-1">
-                    <span className="text-4xl font-black text-white">{tier.price}</span>
-                    <span className="text-gray-400 text-sm mb-1">{tier.period}</span>
-                  </div>
-                  <p className="text-gray-400 text-sm mt-2">{tier.desc}</p>
+                <h3 style={{ fontWeight: 700, fontSize: 18, color: tier.highlight ? "#D4AF37" : "#fff", marginBottom: 8 }}>{tier.name}</h3>
+                <div style={{ marginBottom: 8 }}>
+                  <span style={{ fontSize: 40, fontWeight: 900 }}>{tier.price}</span>
+                  <span style={{ color: "#666", fontSize: 14 }}>{tier.period}</span>
                 </div>
-                <ul className="flex-1 space-y-2 mb-6">
-                  {tier.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-gray-300">
-                      <span className="text-gold mt-0.5">✓</span>
+                <p style={{ color: "#666", fontSize: 13, marginBottom: 20 }}>{tier.desc}</p>
+                <ul style={{ flex: 1, listStyle: "none", padding: 0, marginBottom: 24 }}>
+                  {tier.features.map(f => (
+                    <li key={f} style={{ display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 10, fontSize: 14, color: "#ccc" }}>
+                      <span style={{ color: "#D4AF37", marginTop: 1 }}>✓</span>
                       {f}
                     </li>
                   ))}
                 </ul>
-                <a href={tier.href} target="_blank" rel="noopener noreferrer"
-                  className={`text-center font-bold py-3 rounded text-sm transition ${
-                    tier.highlight
-                      ? "bg-gold text-black hover:bg-gold-light"
-                      : "border border-white/20 text-white hover:border-gold hover:text-gold"
-                  }`}>
+                <a href={tier.href} target="_blank" rel="noopener noreferrer" style={{
+                  display: "block",
+                  textAlign: "center",
+                  padding: "14px",
+                  borderRadius: 8,
+                  fontWeight: 700,
+                  fontSize: 14,
+                  textDecoration: "none",
+                  background: tier.highlight ? "#D4AF37" : "transparent",
+                  color: tier.highlight ? "#000" : "#fff",
+                  border: tier.highlight ? "none" : "1px solid #ffffff30",
+                }}>
                   {tier.cta}
                 </a>
               </div>
@@ -210,19 +238,20 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black mb-4">What Members Say</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div key={t.name} className="bg-white/5 border border-white/10 rounded-xl p-6 card-hover">
-                <p className="text-gray-300 text-sm leading-relaxed mb-6">&ldquo;{t.text}&rdquo;</p>
-                <div>
-                  <div className="text-white font-semibold text-sm">{t.name}</div>
-                  <div className="text-gold text-xs">{t.role}</div>
-                </div>
+      <section style={{ padding: "100px 24px" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <h2 style={{ fontSize: "clamp(32px, 6vw, 56px)", fontWeight: 900, textAlign: "center", marginBottom: 64 }}>What Members Say</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 20 }}>
+            {testimonials.map(t => (
+              <div key={t.name} style={{
+                background: "#0d0d0d",
+                border: "1px solid #ffffff15",
+                borderRadius: 16,
+                padding: 28,
+              }}>
+                <p style={{ color: "#aaa", fontSize: 15, lineHeight: 1.7, marginBottom: 24 }}>&ldquo;{t.text}&rdquo;</p>
+                <div style={{ fontWeight: 600, fontSize: 14 }}>{t.name}</div>
+                <div style={{ color: "#D4AF37", fontSize: 12, marginTop: 4 }}>{t.role}</div>
               </div>
             ))}
           </div>
@@ -230,14 +259,30 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-24 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-black mb-6">
-            Ready to trade with<br /><span className="gold-gradient">real edge?</span>
+      <section style={{
+        padding: "120px 24px",
+        textAlign: "center",
+        background: "radial-gradient(ellipse at bottom, #1a1400 0%, #000 60%)",
+        borderTop: "1px solid #ffffff10",
+      }}>
+        <div style={{ maxWidth: 600, margin: "0 auto" }}>
+          <h2 style={{ fontSize: "clamp(36px, 8vw, 72px)", fontWeight: 900, lineHeight: 1.1, marginBottom: 20 }}>
+            Ready to trade with<br />
+            <span style={{ color: "#D4AF37" }}>real edge?</span>
           </h2>
-          <p className="text-gray-400 text-lg mb-10">Join 24+ traders already inside Apex Trading Systems. Start free — no credit card required.</p>
-          <a href={DISCORD} target="_blank" rel="noopener noreferrer"
-            className="inline-block bg-gold text-black font-black px-10 py-5 rounded text-lg hover:bg-gold-light transition">
+          <p style={{ color: "#888", fontSize: 18, marginBottom: 40 }}>
+            Join 24+ traders already inside Apex Trading Systems. Start free — no credit card required.
+          </p>
+          <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{
+            display: "inline-block",
+            background: "#D4AF37",
+            color: "#000",
+            fontWeight: 900,
+            padding: "20px 48px",
+            borderRadius: 8,
+            fontSize: 18,
+            textDecoration: "none",
+          }}>
             Join the Community →
           </a>
         </div>
