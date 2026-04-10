@@ -60,7 +60,7 @@ const tiers = [
 const testimonials = [
   { name: "Marcus T.", role: "Apex Member", quote: "The ORB strategy alone was worth the membership. Clear, repeatable, and it actually works on ES. Best trading community I've been part of." },
   { name: "Jordan R.", role: "Elite Member", quote: "Seeing the live alerts in real time alongside the education just clicks in a way that solo learning never did." },
-  { name: "Devon K.", role: "Course Only", quote: "9 modules of actual substance. The liquidity and FVG modules changed the way I see every chart." },
+  { name: "Martin F.", role: "Course Only", quote: "9 modules of actual substance. The liquidity and FVG modules changed the way I see every chart." },
 ];
 
 const painPoints = [
