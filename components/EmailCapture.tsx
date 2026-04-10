@@ -10,9 +10,13 @@ export default function EmailCapture() {
     e.preventDefault();
     if (!email) return;
     setLoading(true);
-    // Store email - for now just log and show success
-    // TODO: Connect to email service (Mailchimp, ConvertKit, etc.)
-    await new Promise(r => setTimeout(r, 800));
+    try {
+      await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+    } catch {}
     setSubmitted(true);
     setLoading(false);
   };
