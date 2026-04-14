@@ -16,17 +16,8 @@ export default function JournalLanding() {
   return (
     <div style={{ background: "#000", minHeight: "100vh", fontFamily: "Arial Black, Arial, sans-serif" }}>
 
-      {/* Nav */}
-      <nav style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <span style={{ color: "#fff", fontWeight: 900, fontSize: 22, letterSpacing: 2 }}>APEX</span>
-          <span style={{ color: G, fontWeight: 400, fontSize: 14, letterSpacing: 3 }}>TRADING SYSTEMS</span>
-        </Link>
-        <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
-          <Link href="/" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: 14 }}>← Back to Home</Link>
-          <Link href="/journal/dashboard" style={{ background: G, color: "#000", fontWeight: 900, padding: "10px 24px", borderRadius: 999, textDecoration: "none", fontSize: 14 }}>Open Dashboard →</Link>
-        </div>
-      </nav>
+      {/* Top spacer for main site navbar */}
+      <div style={{ height: 80 }} />
 
       {/* Hero */}
       <div style={{ textAlign: "center", padding: "120px 40px 80px", maxWidth: 800, margin: "0 auto" }}>
