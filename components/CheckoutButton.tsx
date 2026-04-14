@@ -12,7 +12,7 @@ export default function CheckoutButton({ tier, label, style }: Props) {
 
   const handleClick = async () => {
     if (tier === "free") {
-      window.open("https://discord.gg/83VwHsTbs", "_blank");
+      window.open("https://discord.gg/a9fJRsH3us", "_blank");
       return;
     }
     setLoading(true);

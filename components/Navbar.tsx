@@ -52,7 +52,7 @@ export default function Navbar() {
                 {label}
               </Link>
             ))}
-            <a href="https://discord.gg/83VwHsTbs" target="_blank" rel="noopener noreferrer" style={{
+            <a href="https://discord.gg/a9fJRsH3us" target="_blank" rel="noopener noreferrer" style={{
                 background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)",
                 borderRadius: 999,
                 color: "#000", fontWeight: 700, fontSize: 13,
@@ -91,7 +91,7 @@ export default function Navbar() {
             {[["About", "/about"], ["Indicators", "/indicators/apex-orb-pro"], ["Pricing", "/pricing"]].map(([label, href]) => (
               <Link key={label} href={href} style={{ color: "#fff", fontSize: 16, textDecoration: "none" }} onClick={() => setOpen(false)}>{label}</Link>
             ))}
-            <a href="https://discord.gg/83VwHsTbs" target="_blank" rel="noopener noreferrer"
+            <a href="https://discord.gg/a9fJRsH3us" target="_blank" rel="noopener noreferrer"
               style={{ background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)", borderRadius: 999, color: "#000", fontWeight: 700, padding: "13px 20px", textDecoration: "none", textAlign: "center" as const, fontSize: 15 }}
               onClick={() => setOpen(false)}>
               Join Free →

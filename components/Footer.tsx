@@ -54,7 +54,7 @@ export default function Footer() {
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.25)", letterSpacing: "0.12em", textTransform: "uppercase" as const, marginBottom: 20 }}>Community</div>
             <div style={{ marginBottom: 14 }}>
-              <a href="https://discord.gg/83VwHsTbs" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.45)", fontSize: 14, textDecoration: "none" }}>Discord</a>
+              <a href="https://discord.gg/a9fJRsH3us" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.45)", fontSize: 14, textDecoration: "none" }}>Discord</a>
             </div>
             <div style={{ marginBottom: 14 }}>
               <a href="https://x.com/apextrading00" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.45)", fontSize: 14, textDecoration: "none" }}>X / Twitter</a>
