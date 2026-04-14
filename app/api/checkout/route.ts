@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
       discordUsername: discordUsername || "",
       discordRoleId: DISCORD_ROLES[tier],
     },
-    custom_fields: [
+    custom_fields: tier === "orb_pro" ? [] : [
       {
         key: "discord_username",
         label: { type: "custom", custom: "Your Discord Username" },
