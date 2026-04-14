@@ -42,7 +42,7 @@ export default function Navbar() {
 
           {/* Desktop links */}
           <div className="nav-desktop" style={{ display: "flex", alignItems: "center", gap: 28 }}>
-            {[["About", "/about"], ["Success Stories", "/success"], ["Pricing", "/pricing"]].map(([label, href]) => (
+            {[["About", "/about"], ["Indicators", "/indicators/apex-orb-pro"], ["Pricing", "/pricing"]].map(([label, href]) => (
               <Link key={label} href={href} style={{
                 color: "rgba(255,255,255,0.55)", fontSize: 14, fontWeight: 500,
                 textDecoration: "none", transition: "color 0.2s", letterSpacing: "0.01em",
@@ -88,7 +88,7 @@ export default function Navbar() {
             padding: "20px",
             display: "flex", flexDirection: "column", gap: 16,
           }}>
-            {[["About", "/about"], ["Success Stories", "/success"], ["Pricing", "/pricing"]].map(([label, href]) => (
+            {[["About", "/about"], ["Indicators", "/indicators/apex-orb-pro"], ["Pricing", "/pricing"]].map(([label, href]) => (
               <Link key={label} href={href} style={{ color: "#fff", fontSize: 16, textDecoration: "none" }} onClick={() => setOpen(false)}>{label}</Link>
             ))}
             <a href="https://discord.gg/83VwHsTbs" target="_blank" rel="noopener noreferrer"

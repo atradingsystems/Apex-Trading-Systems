@@ -9,6 +9,7 @@ const PRICES: Record<string, string> = {
   apex: "price_1TKEZrQkce3MIQeLloUOii8D",
   elite: "price_1TKEaLQkce3MIQeL7VEP2b9R",
   course: "price_1TKEalQkce3MIQeLSv9F55aO",
+  orb_pro: process.env.STRIPE_PRICE_ORB_PRO || "", // Set in Vercel env
 };
 
 const DISCORD_ROLES: Record<string, string> = {
@@ -24,7 +25,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid tier" }, { status: 400 });
   }
 
-  const isSubscription = tier !== "course";
+  const isSubscription = tier !== "course" && tier !== "orb_pro";
   const baseUrl = process.env.NEXT_PUBLIC_URL || "https://apextradingsystems.io";
 
   try {
