@@ -1,7 +1,7 @@
 import CheckoutButton from "@/components/CheckoutButton";
 import Link from "next/link";
 
-const DISCORD = "https://discord.gg/83VwHsTbs";
+const DISCORD = "https://discord.gg/a9fJRsH3us";
 const G = "#D4AF37";
 
 const glass: React.CSSProperties = {
