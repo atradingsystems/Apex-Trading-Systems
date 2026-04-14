@@ -9,7 +9,7 @@ const PRICES: Record<string, string> = {
   apex: "price_1TKEZrQkce3MIQeLloUOii8D",
   elite: "price_1TKEaLQkce3MIQeL7VEP2b9R",
   course: "price_1TKEalQkce3MIQeLSv9F55aO",
-  orb_pro: process.env.STRIPE_PRICE_ORB_PRO || "", // Set in Vercel env
+  orb_pro: "price_1TMCJzQkce3MIQeLtWbgUUga",
 };
 
 const DISCORD_ROLES: Record<string, string> = {

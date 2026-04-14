@@ -15,7 +15,7 @@ export default function ApexORBPro() {
             Apex <span style={{ color: G }}>ORB Pro</span>
           </h1>
           <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 18, lineHeight: 1.6, marginBottom: 40 }}>
-            Automatically draws the 8AM Opening Range Box on ES & NQ — with midpoint line, breakout levels, and alerts. Built for 5m and 15m traders.
+            The 8AM Opening Range is one of the highest-probability setups in futures trading. Apex ORB Pro automatically draws the range box, midpoint line, and breakout levels on ES &amp; NQ — every day, no manual work. Set your alerts, wait for 8AM, and trade the breakout. Works on 5m and 15m.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <CheckoutButton tier="orb_pro" label="Get Apex ORB Pro — $20" style={{ fontSize: 16, padding: "16px 36px", borderRadius: 999, background: `linear-gradient(135deg, ${G}, #F0D060, #C49A28)`, color: "#000", fontWeight: 800, border: "none", cursor: "pointer" }} />
