@@ -52,8 +52,8 @@ const features = [
 
 const tiers = [
   { name: "Free", price: "$0", period: "", desc: "Get started. No card needed.", features: ["Discord community access", "General chat & market talk", "Modules 0–3 (foundations)", "Rules & orientation"], stripeKey: "free", highlight: false },
-  { name: "Apex", price: "$49", period: "/mo", desc: "Full course + daily content.", features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Signals & commentary", "Weekly recap & review"], stripeKey: "apex", highlight: false },
-  { name: "Elite", price: "$149", period: "/mo", desc: "Live alerts & mentorship.", features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions", "Priority support"], stripeKey: "elite", highlight: true },
+  { name: "Apex", price: "$25", oldPrice: "$49", period: "/mo", desc: "Full course + daily content.", badge: "50% OFF", features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Weekly recap & review"], stripeKey: "apex", highlight: false },
+  { name: "Elite", price: "$150", oldPrice: "$300", period: "/mo", desc: "Live alerts & mentorship.", badge: "50% OFF", features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions", "Priority support"], stripeKey: "elite", highlight: true },
   { name: "Course Only", price: "$297", period: " once", desc: "Lifetime module access.", features: ["All 9 course modules", "Lifetime access", "Future updates included", "Course Q&A channel"], stripeKey: "course", highlight: false },
 ];
 
@@ -247,11 +247,15 @@ export default function Home() {
                   <div style={{ position: "absolute", top: -13, left: "50%", transform: "translateX(-50%)", background: G, color: "#000", fontSize: 10, fontWeight: 800, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.1em", textTransform: "uppercase" as const, whiteSpace: "nowrap" as const }}>Most Popular</div>
                 )}
                 <div style={{ marginBottom: 20 }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: tier.highlight ? G : "rgba(255,255,255,0.4)", letterSpacing: "0.12em", textTransform: "uppercase" as const, marginBottom: 10 }}>{tier.name}</div>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 6 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: tier.highlight ? G : "rgba(255,255,255,0.4)", letterSpacing: "0.12em", textTransform: "uppercase" as const }}>{tier.name}</div>
+                    {(tier as any).badge && <span style={{ background: "#ff3b30", color: "#fff", fontSize: 10, fontWeight: 800, padding: "2px 8px", borderRadius: 999 }}>{(tier as any).badge}</span>}
+                  </div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 4 }}>
                     <span style={{ fontSize: 44, fontWeight: 900, letterSpacing: "-0.04em" }}>{tier.price}</span>
                     <span style={{ fontSize: 13, color: "rgba(255,255,255,0.3)" }}>{tier.period}</span>
                   </div>
+                  {(tier as any).oldPrice && <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginBottom: 4 }}><span style={{ textDecoration: "line-through" }}>{(tier as any).oldPrice}/mo</span></div>}
                   <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)" }}>{tier.desc}</p>
                 </div>
                 <ul style={{ flex: 1, listStyle: "none", padding: 0, marginBottom: 24 }}>
