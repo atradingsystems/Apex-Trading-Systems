@@ -72,9 +72,10 @@ const tiers = [
   },
   {
     name: "Elite",
-    price: "$149",
+    price: "$150",
     period: "/mo",
     desc: "Live alerts, mentorship & voice.",
+    badge: "50% OFF",
     features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship access", "Weekly voice sessions", "Priority support"],
     notIncluded: [],
     cta: "Go Elite",
@@ -152,7 +153,7 @@ export default function Pricing() {
                   </div>
                   {(tier as any).badge && (
                     <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginBottom: 6 }}>
-                      <span style={{ textDecoration: "line-through" }}>$49/mo</span>
+                      <span style={{ textDecoration: "line-through" }}>{tier.name === "Elite" ? "$300/mo" : "$49/mo"}</span>
                     </div>
                   )}
                   <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)", lineHeight: 1.5 }}>{tier.desc}</p>
