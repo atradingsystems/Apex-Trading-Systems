@@ -60,11 +60,12 @@ const tiers = [
   },
   {
     name: "Apex Member",
-    price: "$49",
+    price: "$25",
     period: "/mo",
     desc: "Full course + daily content.",
-    features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Signals & commentary", "Weekly recap & review"],
-    notIncluded: ["Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions"],
+    badge: "50% OFF",
+    features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Weekly recap & review"],
+    notIncluded: ["Signals & commentary", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions"],
     cta: "Get Apex Access",
     highlight: false,
     stripeKey: "apex",
@@ -139,11 +140,21 @@ export default function Pricing() {
                 )}
 
                 <div style={{ marginBottom: 24 }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: tier.highlight ? G : "rgba(255,255,255,0.4)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 12 }}>{tier.name}</div>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 8 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: tier.highlight ? G : "rgba(255,255,255,0.4)", letterSpacing: "0.12em", textTransform: "uppercase" }}>{tier.name}</div>
+                    {(tier as any).badge && (
+                      <span style={{ background: "#ff3b30", color: "#fff", fontSize: 10, fontWeight: 800, padding: "2px 8px", borderRadius: 999, letterSpacing: "0.08em" }}>{(tier as any).badge}</span>
+                    )}
+                  </div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 4 }}>
                     <span style={{ fontSize: 48, fontWeight: 900, letterSpacing: "-0.04em" }}>{tier.price}</span>
                     <span style={{ fontSize: 14, color: "rgba(255,255,255,0.3)" }}>{tier.period}</span>
                   </div>
+                  {(tier as any).badge && (
+                    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginBottom: 6 }}>
+                      <span style={{ textDecoration: "line-through" }}>$49/mo</span>
+                    </div>
+                  )}
                   <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)", lineHeight: 1.5 }}>{tier.desc}</p>
                 </div>
 
