@@ -236,6 +236,8 @@ export default function Home() {
               { icon: "🏀", sport: "NBA", desc: "Nightly picks during the season" },
               { icon: "⚾", sport: "MLB", desc: "Daily run line & totals" },
               { icon: "🏒", sport: "NHL", desc: "Puck line picks & playoffs" },
+              { icon: "⚽", sport: "Soccer", desc: "Top leagues, futures & match bets" },
+              { icon: "🥊", sport: "UFC / Boxing", desc: "Fight night picks & parlays" },
             ].map(s => (
               <div key={s.sport} style={{ background: "#0d0d0d", border: "1px solid rgba(0,200,83,0.15)", borderRadius: 16, padding: "24px", textAlign: "center" as const }}>
                 <div style={{ fontSize: 36, marginBottom: 10 }}>{s.icon}</div>
