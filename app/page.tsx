@@ -312,6 +312,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ELITE TRADE SETUPS */}
+      <section style={{ padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.07)", background: "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(212,175,55,0.05) 0%, transparent 70%)" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 56 }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: G, marginBottom: 14 }}>Real Trades. Real Results.</p>
+            <h2 style={{ fontSize: "clamp(32px,5vw,52px)", fontWeight: 900, letterSpacing: "-0.04em", marginBottom: 16 }}>
+              Inside <span style={{ color: G }}>#elite-trade-setups</span>
+            </h2>
+            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 16, lineHeight: 1.65, maxWidth: 560, margin: "0 auto" }}>
+              Elite members get live trade alerts posted directly in Discord — entries, targets, stops, and real-time options plays. Here&apos;s what it looks like.
+            </p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px,1fr))", gap: 16, marginBottom: 40 }}>
+            <FadeIn delay={0}>
+              <div style={{ background: "#0d0d0d", border: "1px solid rgba(212,175,55,0.2)", borderRadius: 20, overflow: "hidden" }}>
+                <img src="/elite-setup-options.jpg" alt="AAPL options trade +93.97% in elite-trade-setups" style={{ width: "100%", display: "block", borderRadius: "20px 20px 0 0" }} />
+                <div style={{ padding: "20px 24px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                    <span style={{ background: "rgba(0,200,83,0.15)", color: "#00c853", fontSize: 12, fontWeight: 800, padding: "3px 10px", borderRadius: 999 }}>+93.97%</span>
+                    <span style={{ fontSize: 12, color: "rgba(255,255,255,0.35)" }}>AAPL Options</span>
+                  </div>
+                  <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, margin: 0 }}>
+                    AAPL 292.5C weekly — live alert posted in Discord. P/L Open: <span style={{ color: G, fontWeight: 700 }}>+$1,275</span>
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <div style={{ background: "#0d0d0d", border: "1px solid rgba(212,175,55,0.2)", borderRadius: 20, overflow: "hidden" }}>
+                <img src="/elite-setup-futures.jpg" alt="ES futures trade alert in elite-trade-setups" style={{ width: "100%", display: "block", borderRadius: "20px 20px 0 0" }} />
+                <div style={{ padding: "20px 24px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                    <span style={{ background: "rgba(212,175,55,0.15)", color: G, fontSize: 12, fontWeight: 800, padding: "3px 10px", borderRadius: 999 }}>Live Alert</span>
+                    <span style={{ fontSize: 12, color: "rgba(255,255,255,0.35)" }}>ES/MES Futures</span>
+                  </div>
+                  <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, margin: 0 }}>
+                    ES Long — Entry 7,265.75 · Target 7,300.50. Exact alerts posted in real time for Elite members.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+          <div style={{ textAlign: "center" }}>
+            <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13, marginBottom: 20 }}>These are real screenshots from our Discord. No Photoshop. No cherry-picking.</p>
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
       <section style={{ padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
