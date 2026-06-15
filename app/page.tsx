@@ -95,7 +95,7 @@ export default function Home() {
         {/* Live badge */}
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,200,83,0.1)", border: "1px solid rgba(0,200,83,0.25)", borderRadius: 999, padding: "6px 16px", marginBottom: 28 }}>
           <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#00c853", display: "inline-block", boxShadow: "0 0 8px #00c853" }} />
-          <span style={{ fontSize: 12, fontWeight: 600, color: "#00c853", letterSpacing: "0.08em" }}>24+ MEMBERS TRADING RIGHT NOW</span>
+          <span style={{ fontSize: 12, fontWeight: 600, color: "#00c853", letterSpacing: "0.08em" }}>30+ MEMBERS TRADING RIGHT NOW</span>
         </div>
 
         <h1 style={{ fontSize: "clamp(52px, 10vw, 96px)", fontWeight: 900, lineHeight: 1.02, letterSpacing: "-0.04em", marginBottom: 24 }}>
@@ -119,7 +119,7 @@ export default function Home() {
         <div style={{ maxWidth: 800, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8 }}>
           <FadeIn delay={0}>
             <div style={{ ...glass, padding: "20px 10px", textAlign: "center" }}>
-              <div style={{ fontSize: "clamp(20px,4vw,28px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}><CountUp end={24} suffix="+" /></div>
+              <div style={{ fontSize: "clamp(20px,4vw,28px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}><CountUp end={30} suffix="+" /></div>
               <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>Members</div>
             </div>
           </FadeIn>
@@ -402,7 +402,7 @@ export default function Home() {
             Ready to trade<br /><span style={{ color: G }}>with real edge?</span>
           </h2>
           <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 18, marginBottom: 48, lineHeight: 1.65 }}>
-            Join 24+ traders already inside Apex Trading Systems.<br />Start free — no credit card required.
+            Join 30+ traders already inside Apex Trading Systems.<br />Start free — no credit card required.
           </p>
           <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{ ...btnGold, fontSize: 17, padding: "18px 44px" }}>
             Join the Community →
