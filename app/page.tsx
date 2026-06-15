@@ -45,13 +45,14 @@ const features = [
   { icon: "📐", title: "ICT Concepts & Market Structure", desc: "Institutional order flow, BOS, CHoCH, and the liquidity framework that explains every major price move." },
   { icon: "⚡", title: "8AM Opening Range Breakout", desc: "Our primary daily setup on ES & NQ. One window. One strategy. Repeatable edge every session." },
   { icon: "💧", title: "Liquidity & Fair Value Gaps", desc: "See the market how smart money sees it. Hunt sweeps, enter at FVG zones, exit at the next pool." },
+  { icon: "📊", title: "Options Trading", desc: "Calls, puts, and spreads on indices and stocks. Structured setups with defined risk — a powerful, flexible tool alongside your futures game." },
   { icon: "🛡️", title: "Risk Management & Journaling", desc: "Position sizing, daily limits, and the journal system that builds real consistency." },
   { icon: "🏦", title: "Prop Firm Funding", desc: "Pass your eval and trade $50K–$150K in funded capital. Full breakdown of Apex Trader and Topstep." },
   { icon: "🧠", title: "Trading Psychology", desc: "Why your brain works against you in live markets — and the frameworks that override it." },
 ];
 
 const tiers = [
-  { name: "Free", price: "$0", period: "", desc: "Get started. No card needed.", features: ["Discord community access", "General chat & market talk", "Modules 0–3 (foundations)", "Rules & orientation"], stripeKey: "free", highlight: false },
+  { name: "Free", price: "$0", period: "", desc: "Get started. No card needed.", features: ["Discord community access", "General chat & market talk", "Modules 0–3 (foundations)", "Rules & orientation", "🏈 Free sports betting picks"], stripeKey: "free", highlight: false },
   { name: "Apex", price: "$25", oldPrice: "$49", period: "/mo", desc: "Full course + daily content.", badge: "50% OFF", features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Weekly recap & review"], stripeKey: "apex", highlight: false },
   { name: "Elite", price: "$150", oldPrice: "$300", period: "/mo", desc: "Live alerts & mentorship.", badge: "50% OFF", features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions", "Priority support"], stripeKey: "elite", highlight: true },
   { name: "Course Only", price: "$297", period: " once", desc: "Lifetime module access.", features: ["All 9 course modules", "Lifetime access", "Future updates included", "Course Q&A channel"], stripeKey: "course", highlight: false },
@@ -98,11 +99,11 @@ export default function Home() {
         </div>
 
         <h1 style={{ fontSize: "clamp(52px, 10vw, 96px)", fontWeight: 900, lineHeight: 1.02, letterSpacing: "-0.04em", marginBottom: 24 }}>
-          Master ES & NQ.<br /><span style={{ color: G }}>Trade With Edge.</span>
+          Master Futures & Options.<br /><span style={{ color: G }}>Trade With Edge.</span>
         </h1>
 
         <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "clamp(16px,2.5vw,19px)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 48px" }}>
-          ICT concepts, the 8AM ORB strategy, and a community of serious traders built for those who want to trade like professionals.
+          ICT concepts, the 8AM ORB strategy, options trading, and a community of serious traders built for those who want to trade like professionals.
         </p>
 
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" as const }}>
@@ -130,8 +131,8 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={200}>
             <div style={{ ...glass, padding: "20px 10px", textAlign: "center" }}>
-              <div style={{ fontSize: "clamp(20px,4vw,28px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}>ES & NQ</div>
-              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>Focused</div>
+              <div style={{ fontSize: "clamp(14px,3vw,20px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}>Futures + Options</div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>Markets</div>
             </div>
           </FadeIn>
           <FadeIn delay={300}>
@@ -213,6 +214,43 @@ export default function Home() {
                 <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14, lineHeight: 1.7 }}>{f.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SPORTS PICKS */}
+      <section style={{ padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.07)", background: "rgba(0,180,100,0.02)" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 48 }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: "#00c853", marginBottom: 14 }}>Community Bonus</p>
+            <h2 style={{ fontSize: "clamp(32px,5vw,52px)", fontWeight: 900, letterSpacing: "-0.04em", marginBottom: 16 }}>
+              Free Sports Picks.<br /><span style={{ color: G }}>For Every Member.</span>
+            </h2>
+            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 16, lineHeight: 1.65, maxWidth: 560, margin: "0 auto" }}>
+              Because trading is a grind — and we like to keep it fun. Every Apex member gets access to our free sports betting picks channel in Discord. NFL, NBA, MLB, and more. No upsells, no premium tier — just picks, posted free.
+            </p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px,1fr))", gap: 10, marginBottom: 40 }}>
+            {[
+              { icon: "🏈", sport: "NFL", desc: "Weekly game picks & best bets" },
+              { icon: "🏀", sport: "NBA", desc: "Nightly picks during the season" },
+              { icon: "⚾", sport: "MLB", desc: "Daily run line & totals" },
+              { icon: "🏒", sport: "NHL", desc: "Puck line picks & playoffs" },
+            ].map(s => (
+              <div key={s.sport} style={{ background: "#0d0d0d", border: "1px solid rgba(0,200,83,0.15)", borderRadius: 16, padding: "24px", textAlign: "center" as const }}>
+                <div style={{ fontSize: 36, marginBottom: 10 }}>{s.icon}</div>
+                <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 6 }}>{s.sport}</div>
+                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.4)" }}>{s.desc}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign: "center" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "rgba(0,200,83,0.08)", border: "1px solid rgba(0,200,83,0.2)", borderRadius: 12, padding: "14px 28px", marginBottom: 20 }}>
+              <span style={{ color: "#00c853", fontSize: 18 }}>✓</span>
+              <span style={{ color: "rgba(255,255,255,0.7)", fontSize: 15 }}>Included free with every membership tier — even the free one.</span>
+            </div>
+            <br />
+            <a href="https://discord.gg/a9fJRsH3us" target="_blank" rel="noopener noreferrer" style={{ ...btnGold, fontSize: 14, padding: "13px 28px" }}>Get Access Free →</a>
           </div>
         </div>
       </section>
