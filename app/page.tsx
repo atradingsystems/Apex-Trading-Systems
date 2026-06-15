@@ -349,6 +349,7 @@ export default function Home() {
               { src: "/elite-setup-alert.jpg", badge: "+$4,150", badgeColor: "#00c853", badgeBg: "rgba(0,200,83,0.15)", label: "Bot Alert + Result", desc: "Apex Bot posts the alert. Member closes for $4,150 gain. This is the loop." },
               { src: "/elite-setup-tp.jpg", badge: "TP Smashed", badgeColor: "#00c853", badgeBg: "rgba(0,200,83,0.15)", label: "ES Long · 4/15/26", desc: "Entry 7,008.25 · Target 7,018.75 · R/R 1:1.8R. \"Another TP smashed 💪\"" },
               { src: "/elite-setup-mes-short.jpg", badge: "TP1 + TP2 💪", badgeColor: "#00c853", badgeBg: "rgba(0,200,83,0.15)", label: "MES Short · 4/7/26", desc: "MESM26 Short · Entry 6,616.75 · TP1 6,589.75 · TP2 6,576.75 · R:R 1.74. Both targets smashed." },
+              { src: "/elite-setup-mes-short2.jpg", badge: "TP1 + TP2 Hit", badgeColor: "#00c853", badgeBg: "rgba(0,200,83,0.15)", label: "MES Short · 4/6/26", desc: "MESM26 Short · Entry 6,642.00 · TP1 6,629.00 · TP2 6,624.00 · R:R 3. Chart confirms clean breakdown." },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 80}>
                 <div style={{ background: "#0d0d0d", border: "1px solid rgba(212,175,55,0.15)", borderRadius: 16, overflow: "hidden" }}>
