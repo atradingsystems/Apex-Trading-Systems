@@ -39,7 +39,7 @@ export default function About() {
             Built by a Trader.<br /><span style={{ color: G }}>For Traders.</span>
           </h1>
           <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 18, lineHeight: 1.7, maxWidth: 520, margin: "0 auto" }}>
-            Apex Trading Systems was built on one belief: serious traders deserve serious education — not recycled YouTube content and vague advice.
+            I didn&apos;t build this because I had it all figured out. I built it because I didn&apos;t &mdash; and I couldn&apos;t find anyone who would just be straight with me about that.
           </p>
         </div>
       </section>
@@ -47,24 +47,102 @@ export default function About() {
       {/* STORY */}
       <section style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: 680, margin: "0 auto" }}>
-          {[
-            "Most trading education is built to sell, not to teach. Courses that promise lambos. Discord servers full of noise. Indicators that don't work. Communities that disappear the moment you need help.",
-            "Apex Trading Systems is different. We built this around a single methodology — ICT concepts applied to ES & NQ futures — and a single primary setup: the 8AM Opening Range Breakout.",
-            "One instrument. One setup. Studied deeply. That's the edge.",
-            "Our curriculum covers everything from TradingView setup to passing prop firm evaluations. 9 modules built to give you the complete picture — not just the entry, but the structure, the liquidity context, the risk framework, and the psychology that makes it all work in live markets.",
-            "The community is small by design. We're not here to sell you a seat and disappear. We're here to build traders.",
-          ].map((p, i) => (
-            <p key={i} style={{
-              color: i === 2 ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.45)",
-              fontSize: i === 2 ? 22 : 17,
-              fontWeight: i === 2 ? 700 : 400,
-              lineHeight: 1.75,
-              marginBottom: 28,
-              letterSpacing: i === 2 ? "-0.02em" : "normal",
-            }}>
-              {p}
+
+          {/* Intro */}
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 17, lineHeight: 1.8, marginBottom: 20 }}>
+            My name is Anthony. I&apos;ve been trading futures for years. ES and NQ mostly &mdash; the S&amp;P and Nasdaq. The markets that move the most, hurt the most, and reward the most when you finally get them right.
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 17, lineHeight: 1.8, marginBottom: 48 }}>
+            But before I got them right, I got them very wrong.
+          </p>
+
+          {/* Pull quote */}
+          <div style={{ borderLeft: "3px solid rgba(212,175,55,0.5)", paddingLeft: 28, marginBottom: 48 }}>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 22, fontWeight: 700, lineHeight: 1.65, letterSpacing: "-0.02em", margin: 0 }}>
+              I blew accounts. More than once. I chased entries with no structure, bought courses that taught me indicators instead of how markets actually move, and spent way too long in Discord servers full of noise and zero substance.
             </p>
-          ))}
+          </div>
+
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 17, lineHeight: 1.8, marginBottom: 48 }}>
+            Every loss felt personal. Every blown account felt like proof that maybe this wasn&apos;t for me. But I kept going. Not because I was fearless &mdash; because I was stubborn. And eventually something shifted.
+          </p>
+
+          {/* Divider */}
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", marginBottom: 48 }} />
+
+          {/* ICT */}
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: G, marginBottom: 16 }}>The Turning Point</p>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 17, lineHeight: 1.8, marginBottom: 20 }}>
+            I found ICT concepts. Not through a $5,000 course &mdash; through obsession. Through screen time. Through journaling every trade until the patterns started making sense.
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 17, lineHeight: 1.8, marginBottom: 20 }}>
+            Liquidity sweeps. Fair value gaps. Order flow. The 8AM Opening Range Breakout on ES and NQ.
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 20, fontWeight: 700, lineHeight: 1.7, letterSpacing: "-0.02em", marginBottom: 48 }}>
+            Suddenly the market wasn&apos;t random anymore. It had logic. It had structure. And once I could see that structure &mdash; I couldn&apos;t unsee it.
+          </p>
+
+          {/* Divider */}
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", marginBottom: 48 }} />
+
+          {/* Life hit different */}
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: G, marginBottom: 16 }}>When Life Hit Different</p>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 17, lineHeight: 1.8, marginBottom: 20 }}>
+            I lost my job. The money I had set aside for trading went toward keeping things afloat. I found myself on a sim account &mdash; paper trading while I rebuilt financially, selling things just to stay in the game.
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 17, lineHeight: 1.8, marginBottom: 20 }}>
+            It was humbling. But it was also clarifying.
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 17, lineHeight: 1.8, marginBottom: 48 }}>
+            I had built something real with Apex Trading Systems. A Discord community. A curriculum. A methodology that actually works. And I realized that what I had built could generate income &mdash; and help other traders &mdash; without needing a live account to do it. So that became the mission.
+          </p>
+
+          {/* Divider */}
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", marginBottom: 48 }} />
+
+          {/* The mission */}
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: G, marginBottom: 16 }}>Who This Is For</p>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 20, fontWeight: 700, lineHeight: 1.7, letterSpacing: "-0.02em", marginBottom: 20 }}>
+            Apex Trading Systems exists for the trader I used to be.
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 17, lineHeight: 1.8, marginBottom: 32 }}>
+            The one getting destroyed by the market and wondering if there&apos;s something they&apos;re missing. The one paying for courses that teach indicators instead of concepts. The one who&apos;s smart enough to know the information they&apos;re getting isn&apos;t good enough &mdash; but doesn&apos;t know where else to go.
+          </p>
+
+          {/* What we offer */}
+          <div style={{ background: "#0d0d0d", border: "1px solid rgba(212,175,55,0.15)", borderRadius: 20, padding: "32px", marginBottom: 48 }}>
+            <p style={{ fontSize: 13, fontWeight: 700, color: G, letterSpacing: "0.08em", textTransform: "uppercase" as const, marginBottom: 24 }}>What we offer that most communities don&apos;t</p>
+            {[
+              ["Start free", "No credit card. No pressure. Full community access from day one."],
+              ["Teach you WHY price moves", "ICT methodology. Institutional order flow. The actual mechanics behind every major move on ES and NQ."],
+              ["Show you everything", "Wins and losses. Good days and bad ones. Real growth comes from honest review &mdash; not highlight reels."],
+              ["9-module curriculum", "From market structure to prop firm strategy to trading psychology. Zero to funded."],
+              ["Show up every day", "Pre-market bias at 7:45AM. ORB alert at 7:58AM. Recap at 4:30PM. Day in, day out."],
+            ].map(([title, desc], i) => (
+              <div key={i} style={{ display: "flex", gap: 14, marginBottom: i < 4 ? 18 : 0 }}>
+                <span style={{ color: G, fontSize: 14, marginTop: 2, flexShrink: 0 }}>✓</span>
+                <div>
+                  <span style={{ color: "#fff", fontWeight: 700, fontSize: 15 }}>{title}</span>
+                  <span style={{ color: "rgba(255,255,255,0.45)", fontSize: 15 }}> &mdash; <span dangerouslySetInnerHTML={{__html: desc}} /></span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Closing */}
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 17, lineHeight: 1.8, marginBottom: 20 }}>
+            This community is still growing. We&apos;re not the biggest. We&apos;re not backed by a guru with a Lambo and a highlight reel. We&apos;re a community of serious traders learning a serious methodology &mdash; and we&apos;re building this thing together.
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 17, lineHeight: 1.8, marginBottom: 40 }}>
+            If you&apos;re tired of losing money following the wrong people &mdash; you&apos;re in the right place.
+          </p>
+
+          {/* Signature */}
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: 32 }}>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 17, fontWeight: 700, marginBottom: 4 }}>— Anthony</p>
+            <p style={{ color: G, fontSize: 13 }}>Founder, Apex Trading Systems</p>
+          </div>
+
         </div>
       </section>
 
