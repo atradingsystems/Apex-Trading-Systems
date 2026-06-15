@@ -324,38 +324,48 @@ export default function Home() {
               Elite members get live trade alerts posted directly in Discord — entries, targets, stops, and real-time options plays. Here&apos;s what it looks like.
             </p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px,1fr))", gap: 16, marginBottom: 40 }}>
-            <FadeIn delay={0}>
-              <div style={{ background: "#0d0d0d", border: "1px solid rgba(212,175,55,0.2)", borderRadius: 20, overflow: "hidden" }}>
-                <img src="/elite-setup-options.jpg" alt="AAPL options trade +93.97% in elite-trade-setups" style={{ width: "100%", display: "block", borderRadius: "20px 20px 0 0" }} />
-                <div style={{ padding: "20px 24px" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-                    <span style={{ background: "rgba(0,200,83,0.15)", color: "#00c853", fontSize: 12, fontWeight: 800, padding: "3px 10px", borderRadius: 999 }}>+93.97%</span>
-                    <span style={{ fontSize: 12, color: "rgba(255,255,255,0.35)" }}>AAPL Options</span>
-                  </div>
-                  <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, margin: 0 }}>
-                    AAPL 292.5C weekly — live alert posted in Discord. P/L Open: <span style={{ color: G, fontWeight: 700 }}>+$1,275</span>
-                  </p>
-                </div>
+
+          {/* $4,150 featured result */}
+          <FadeIn delay={0}>
+            <div style={{ background: "linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.03))", border: "1px solid rgba(212,175,55,0.3)", borderRadius: 20, padding: "28px 32px", marginBottom: 24, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap" as const, gap: 20 }}>
+              <div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: G, letterSpacing: "0.12em", textTransform: "uppercase" as const, marginBottom: 8 }}>Featured Result — ES Long Alert · April 20, 2026</div>
+                <div style={{ fontSize: "clamp(28px,5vw,44px)", fontWeight: 900, color: "#00c853", letterSpacing: "-0.04em", lineHeight: 1 }}>+$4,150</div>
+                <div style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", marginTop: 8 }}>Entry 7,130.25 · Target 7,184.25 · R/R 1:2.8R · Closed early by member</div>
               </div>
-            </FadeIn>
-            <FadeIn delay={100}>
-              <div style={{ background: "#0d0d0d", border: "1px solid rgba(212,175,55,0.2)", borderRadius: 20, overflow: "hidden" }}>
-                <img src="/elite-setup-futures.jpg" alt="ES futures trade alert in elite-trade-setups" style={{ width: "100%", display: "block", borderRadius: "20px 20px 0 0" }} />
-                <div style={{ padding: "20px 24px" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-                    <span style={{ background: "rgba(212,175,55,0.15)", color: G, fontSize: 12, fontWeight: 800, padding: "3px 10px", borderRadius: 999 }}>Live Alert</span>
-                    <span style={{ fontSize: 12, color: "rgba(255,255,255,0.35)" }}>ES/MES Futures</span>
-                  </div>
-                  <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, margin: 0 }}>
-                    ES Long — Entry 7,265.75 · Target 7,300.50. Exact alerts posted in real time for Elite members.
-                  </p>
-                </div>
+              <div style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontStyle: "italic", maxWidth: 280, borderLeft: "2px solid rgba(212,175,55,0.3)", paddingLeft: 20 }}>
+                &ldquo;Just closed the trade early for a gain of $4,150&rdquo;
+                <div style={{ marginTop: 8, color: G, fontStyle: "normal", fontWeight: 700, fontSize: 12 }}>— Ant-Trading, Elite Member</div>
               </div>
-            </FadeIn>
+            </div>
+          </FadeIn>
+
+          {/* Screenshot grid */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px,1fr))", gap: 12, marginBottom: 32 }}>
+            {[
+              { src: "/elite-setup-options.jpg", badge: "+93.97%", badgeColor: "#00c853", badgeBg: "rgba(0,200,83,0.15)", label: "AAPL Options", desc: "AAPL 292.5C weekly — live alert posted in Discord. P/L Open: +$1,275" },
+              { src: "/elite-setup-futures.jpg", badge: "Live Alert", badgeColor: G, badgeBg: "rgba(212,175,55,0.15)", label: "ES/MES Futures", desc: "ES Long — Entry 7,265.75 · Target 7,300.50. Posted in real time." },
+              { src: "/elite-setup-chart.jpg", badge: "Chart Analysis", badgeColor: G, badgeBg: "rgba(212,175,55,0.15)", label: "ES Futures Setup", desc: "15m chart with key levels and trade zones shared in #elite-trade-setups." },
+              { src: "/elite-setup-alert.jpg", badge: "+$4,150", badgeColor: "#00c853", badgeBg: "rgba(0,200,83,0.15)", label: "Bot Alert + Result", desc: "Apex Bot posts the alert. Member closes for $4,150 gain. This is the loop." },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 80}>
+                <div style={{ background: "#0d0d0d", border: "1px solid rgba(212,175,55,0.15)", borderRadius: 16, overflow: "hidden" }}>
+                  <img src={item.src} alt={item.label} style={{ width: "100%", display: "block" }} />
+                  <div style={{ padding: "16px 18px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                      <span style={{ background: item.badgeBg, color: item.badgeColor, fontSize: 11, fontWeight: 800, padding: "2px 9px", borderRadius: 999 }}>{item.badge}</span>
+                      <span style={{ fontSize: 11, color: "rgba(255,255,255,0.3)" }}>{item.label}</span>
+                    </div>
+                    <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
           </div>
+
           <div style={{ textAlign: "center" }}>
-            <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13, marginBottom: 20 }}>These are real screenshots from our Discord. No Photoshop. No cherry-picking.</p>
+            <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 13, marginBottom: 24 }}>Real screenshots from our Discord. No Photoshop. No cherry-picking.</p>
+            <a href="https://discord.gg/a9fJRsH3us" target="_blank" rel="noopener noreferrer" style={{ ...btnGold, fontSize: 14, padding: "13px 28px" }}>Get Elite Access →</a>
           </div>
         </div>
       </section>
