@@ -59,9 +59,9 @@ const tiers = [
 ];
 
 const testimonials = [
-  { name: "Marcus T.", role: "Apex Member", quote: "The ORB strategy alone was worth the membership. Clear, repeatable, and it actually works on ES. Best trading community I've been part of." },
-  { name: "Jordan R.", role: "Elite Member", quote: "Seeing the live alerts in real time alongside the education just clicks in a way that solo learning never did." },
-  { name: "Martin F.", role: "Course Only", quote: "9 modules of actual substance. The liquidity and FVG modules changed the way I see every chart." },
+  { name: "Ant-Trading", role: "Elite Member", discord: true, quote: "Just closed the trade early for a gain of $4,150. The live alerts are insane — entry was clean, hit target perfectly." },
+  { name: "Jordan R.", role: "Elite Member", discord: false, quote: "Seeing the live alerts in real time alongside the education just clicks in a way that solo learning never did. Went from blowing accounts to actually being consistent." },
+  { name: "Martin F.", role: "Course Only", discord: false, quote: "9 modules of actual substance. The liquidity and FVG modules changed the way I read every single chart. Worth every penny." },
 ];
 
 const painPoints = [
@@ -93,17 +93,17 @@ export default function Home() {
         background: "radial-gradient(ellipse 100% 60% at 50% 0%, rgba(212,175,55,0.07) 0%, transparent 70%)",
       }}>
         {/* Live badge */}
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,200,83,0.1)", border: "1px solid rgba(0,200,83,0.25)", borderRadius: 999, padding: "6px 16px", marginBottom: 28 }}>
-          <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#00c853", display: "inline-block", boxShadow: "0 0 8px #00c853" }} />
-          <span style={{ fontSize: 12, fontWeight: 600, color: "#00c853", letterSpacing: "0.08em" }}>30+ MEMBERS TRADING RIGHT NOW</span>
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.25)", borderRadius: 999, padding: "6px 16px", marginBottom: 28 }}>
+          <span style={{ width: 7, height: 7, borderRadius: "50%", background: G, display: "inline-block", boxShadow: `0 0 8px ${G}` }} />
+          <span style={{ fontSize: 12, fontWeight: 600, color: G, letterSpacing: "0.08em" }}>50% OFF — LIMITED TIME</span>
         </div>
 
         <h1 style={{ fontSize: "clamp(52px, 10vw, 96px)", fontWeight: 900, lineHeight: 1.02, letterSpacing: "-0.04em", marginBottom: 24 }}>
-          Master Futures & Options.<br /><span style={{ color: G }}>Trade With Edge.</span>
+          Stop Guessing.<br /><span style={{ color: G }}>Trade With Edge.</span>
         </h1>
 
-        <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "clamp(16px,2.5vw,19px)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 48px" }}>
-          ICT concepts, the 8AM ORB strategy, options trading, and a community of serious traders built for those who want to trade like professionals.
+        <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "clamp(16px,2.5vw,19px)", lineHeight: 1.7, maxWidth: 540, margin: "0 auto 48px" }}>
+          ICT methodology, the 8AM ORB strategy, live trade alerts, and a community of serious traders — built by a full-time trader, for traders who want real results.
         </p>
 
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" as const }}>
@@ -116,31 +116,45 @@ export default function Home() {
 
       {/* STATS */}
       <section style={{ padding: "40px 24px 80px" }}>
-        <div style={{ maxWidth: 800, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8 }}>
-          <FadeIn delay={0}>
-            <div style={{ ...glass, padding: "20px 10px", textAlign: "center" }}>
-              <div style={{ fontSize: "clamp(20px,4vw,28px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}><CountUp end={30} suffix="+" /></div>
-              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>Members</div>
-            </div>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <div style={{ ...glass, padding: "20px 10px", textAlign: "center" }}>
-              <div style={{ fontSize: "clamp(20px,4vw,28px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}><CountUp end={9} /></div>
-              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>Modules</div>
-            </div>
-          </FadeIn>
-          <FadeIn delay={200}>
-            <div style={{ ...glass, padding: "20px 10px", textAlign: "center" }}>
-              <div style={{ fontSize: "clamp(14px,3vw,20px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}>Futures + Options</div>
-              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>Markets</div>
-            </div>
-          </FadeIn>
-          <FadeIn delay={300}>
-            <div style={{ ...glass, padding: "20px 10px", textAlign: "center" }}>
-              <div style={{ fontSize: "clamp(20px,4vw,28px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}>ICT</div>
-              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 6, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>Method</div>
-            </div>
-          </FadeIn>
+        <div style={{ maxWidth: 900, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8 }}>
+          {[
+            { value: "30+", label: "Active Members" },
+            { value: "9", label: "Course Modules" },
+            { value: "$4,150", label: "Top Single Trade" },
+            { value: "8AM", label: "Daily ORB Setup" },
+          ].map((stat, i) => (
+            <FadeIn key={stat.label} delay={i * 80}>
+              <div style={{ ...glass, padding: "24px 12px", textAlign: "center" }}>
+                <div style={{ fontSize: "clamp(20px,4vw,30px)", fontWeight: 900, color: G, letterSpacing: "-0.03em" }}>{stat.value}</div>
+                <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 8, textTransform: "uppercase" as const, letterSpacing: "0.1em" }}>{stat.label}</div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section style={{ padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.07)", background: "rgba(212,175,55,0.02)" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 56 }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: G, marginBottom: 14 }}>The Process</p>
+            <h2 style={{ fontSize: "clamp(32px,5vw,52px)", fontWeight: 900, letterSpacing: "-0.04em" }}>Three steps to a real edge.</h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px,1fr))", gap: 12 }}>
+            {[
+              { step: "01", title: "Join the Community", desc: "Start free. Instant access to Discord, course modules 0–3, and the sports picks channel. No card required." },
+              { step: "02", title: "Master the System", desc: "9 modules covering ICT methodology, the 8AM ORB setup, options, prop firms, and trading psychology." },
+              { step: "03", title: "Trade With Confidence", desc: "Live alerts, daily bias, elite setups, and a community of traders behind you every session." },
+            ].map(item => (
+              <FadeIn key={item.step} delay={0}>
+                <div style={{ ...glass, padding: "32px 28px", position: "relative" as const }}>
+                  <div style={{ fontSize: 48, fontWeight: 900, color: "rgba(212,175,55,0.12)", letterSpacing: "-0.04em", lineHeight: 1, marginBottom: 16 }}>{item.step}</div>
+                  <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 10, letterSpacing: "-0.02em" }}>{item.title}</h3>
+                  <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14, lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -383,13 +397,18 @@ export default function Home() {
             <h2 style={{ fontSize: "clamp(36px,6vw,60px)", fontWeight: 900, letterSpacing: "-0.04em" }}>What traders say.</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px,1fr))", gap: 10 }}>
-            {testimonials.map(t => (
+            {testimonials.map((t: any) => (
               <div key={t.name} style={{ ...glass, padding: "32px" }}>
                 <div style={{ display: "flex", gap: 2, marginBottom: 16 }}>
                   {[1,2,3,4,5].map(s => <span key={s} style={{ color: G, fontSize: 14 }}>★</span>)}
                 </div>
                 <p style={{ fontSize: 15, color: "rgba(255,255,255,0.65)", lineHeight: 1.75, marginBottom: 24, fontStyle: "italic" }}>&ldquo;{t.quote}&rdquo;</p>
-                <div style={{ fontWeight: 700, fontSize: 14 }}>{t.name}</div>
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  {t.discord && (
+                    <span style={{ background: "rgba(88,101,242,0.2)", border: "1px solid rgba(88,101,242,0.3)", borderRadius: 6, padding: "2px 8px", fontSize: 10, fontWeight: 700, color: "#7289da", letterSpacing: "0.06em" }}>DISCORD</span>
+                  )}
+                  <div style={{ fontWeight: 700, fontSize: 14 }}>{t.name}</div>
+                </div>
                 <div style={{ fontSize: 12, color: G, marginTop: 4 }}>{t.role}</div>
               </div>
             ))}

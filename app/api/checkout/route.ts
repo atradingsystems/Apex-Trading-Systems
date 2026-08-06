@@ -6,8 +6,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 });
 
 const PRICES: Record<string, string> = {
-  apex: "price_1TKEZrQkce3MIQeLloUOii8D",
-  elite: "price_1TKEaLQkce3MIQeL7VEP2b9R",
+  apex: "price_1U1QmoQkce3MIQeLREXxDD0n",   // $25/mo (50% promo)
+  elite: "price_1U1QmoQkce3MIQeLKsX7sk11",  // $150/mo (50% promo)
   course: "price_1TKEalQkce3MIQeLSv9F55aO",
   orb_pro: "price_1TMCJzQkce3MIQeLtWbgUUga",
 };

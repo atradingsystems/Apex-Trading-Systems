@@ -28,7 +28,7 @@ export default function Footer() {
           gridTemplateColumns: "2fr 1fr 1fr",
           gap: 48,
           marginBottom: 48,
-        }}>
+        }} className="footer-grid">
           {/* Brand */}
           <div>
             <div style={{ marginBottom: 16 }}>
@@ -62,6 +62,9 @@ export default function Footer() {
             <div style={{ marginBottom: 14 }}>
               <a href="https://www.instagram.com/apextradingsystems" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.45)", fontSize: 14, textDecoration: "none" }}>Instagram</a>
             </div>
+            <div style={{ marginBottom: 14 }}>
+              <a href="https://www.tiktok.com/@apextradingsystems" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.45)", fontSize: 14, textDecoration: "none" }}>TikTok</a>
+            </div>
           </div>
         </div>
 
@@ -82,7 +85,7 @@ export default function Footer() {
 
       <style>{`
         @media (max-width: 640px) {
-          .footer-grid { grid-template-columns: 1fr 1fr !important; }
+          .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
         }
       `}</style>
     </footer>
