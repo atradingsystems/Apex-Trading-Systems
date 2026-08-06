@@ -1,5 +1,5 @@
 const DISCORD = "https://discord.gg/a9fJRsH3us";
-const G = "#D4AF37";
+const G = "#00A3FF";
 
 const glass: React.CSSProperties = {
   background: "#0a0a0a",
@@ -87,7 +87,7 @@ export default function Success() {
       }}>
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,175,55,0.07), transparent)",
+          background: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,163,255,0.07), transparent)",
         }} />
         <div style={{ maxWidth: 700, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: G, marginBottom: 16 }}>Proof</p>
@@ -119,13 +119,13 @@ export default function Success() {
             {stories.map(s => (
               <div key={s.name} style={{ ...glass, padding: "32px" }}>
                 {/* Gold top accent */}
-                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent)" }} />
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(0,163,255,0.5), transparent)" }} />
 
                 {/* Result badge */}
                 <div style={{
                   display: "inline-flex", alignItems: "center", gap: 6,
-                  background: "rgba(212,175,55,0.1)",
-                  border: "1px solid rgba(212,175,55,0.25)",
+                  background: "rgba(0,163,255,0.1)",
+                  border: "1px solid rgba(0,163,255,0.25)",
                   borderRadius: 999, padding: "4px 12px",
                   marginBottom: 20,
                 }}>
@@ -154,8 +154,8 @@ export default function Success() {
                 <div style={{ display: "flex", alignItems: "center", gap: 12, paddingTop: 20, borderTop: "1px solid rgba(255,255,255,0.07)" }}>
                   <div style={{
                     width: 40, height: 40, borderRadius: "50%",
-                    background: `linear-gradient(135deg, rgba(212,175,55,0.3), rgba(212,175,55,0.1))`,
-                    border: "1px solid rgba(212,175,55,0.3)",
+                    background: `linear-gradient(135deg, rgba(0,163,255,0.3), rgba(0,163,255,0.1))`,
+                    border: "1px solid rgba(0,163,255,0.3)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     fontSize: 16, fontWeight: 900, color: G,
                     flexShrink: 0,
@@ -191,7 +191,7 @@ export default function Success() {
       }}>
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(ellipse 60% 60% at 50% 100%, rgba(212,175,55,0.06), transparent)",
+          background: "radial-gradient(ellipse 60% 60% at 50% 100%, rgba(0,163,255,0.06), transparent)",
         }} />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 520, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(36px,6vw,60px)", fontWeight: 900, letterSpacing: "-0.04em", marginBottom: 16 }}>
@@ -201,7 +201,7 @@ export default function Success() {
             Join the community for free and start building your edge today.
           </p>
           <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{
-            background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)",
+            background: "linear-gradient(135deg, #00A3FF, #38BFFF, #0086D4)",
             borderRadius: 999, color: "#000",
             fontWeight: 800, fontSize: 16,
             padding: "16px 40px",

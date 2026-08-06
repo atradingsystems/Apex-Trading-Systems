@@ -1,7 +1,7 @@
 import Link from "next/link";
 import CheckoutButton from "@/components/CheckoutButton";
 
-const G = "#D4AF37";
+const G = "#00A3FF";
 
 export default function ApexORBPro() {
   return (
@@ -18,7 +18,7 @@ export default function ApexORBPro() {
             The 8AM Opening Range is one of the highest-probability setups in futures trading. Apex ORB Pro automatically draws the range box, midpoint line, and breakout levels on ES &amp; NQ — every day, no manual work. Set your alerts, wait for 8AM, and trade the breakout. Works on 5m and 15m.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <CheckoutButton tier="orb_pro" label="Get Apex ORB Pro — $20" style={{ fontSize: 16, padding: "16px 36px", borderRadius: 999, background: `linear-gradient(135deg, ${G}, #F0D060, #C49A28)`, color: "#000", fontWeight: 800, border: "none", cursor: "pointer" }} />
+            <CheckoutButton tier="orb_pro" label="Get Apex ORB Pro — $20" style={{ fontSize: 16, padding: "16px 36px", borderRadius: 999, background: `linear-gradient(135deg, ${G}, #38BFFF, #0086D4)`, color: "#000", fontWeight: 800, border: "none", cursor: "pointer" }} />
           </div>
           <p style={{ fontSize: 12, color: "rgba(255,255,255,0.25)", marginTop: 14 }}>One-time payment · Pine Script sent to your email</p>
         </div>
@@ -26,7 +26,7 @@ export default function ApexORBPro() {
 
       {/* PREVIEW IMAGE PLACEHOLDER */}
       <section style={{ padding: "60px 24px", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", background: "#0d0d0d", border: "1px solid rgba(212,175,55,0.2)", borderRadius: 16, aspectRatio: "16/7", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", background: "#0d0d0d", border: "1px solid rgba(0,163,255,0.2)", borderRadius: 16, aspectRatio: "16/7", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: 48, marginBottom: 12 }}>📊</div>
             <div style={{ color: "rgba(255,255,255,0.2)", fontSize: 14 }}>Chart preview — Apex ORB Pro on ES 5m</div>
@@ -89,7 +89,7 @@ export default function ApexORBPro() {
             <span style={{ color: G }}>$20</span>
           </div>
           <div style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, marginBottom: 32 }}>One-time · Instant delivery · Works on any TradingView plan</div>
-          <CheckoutButton tier="orb_pro" label="Buy Apex ORB Pro →" style={{ fontSize: 16, padding: "16px 40px", borderRadius: 999, background: `linear-gradient(135deg, ${G}, #F0D060, #C49A28)`, color: "#000", fontWeight: 800, border: "none", cursor: "pointer", width: "100%" }} />
+          <CheckoutButton tier="orb_pro" label="Buy Apex ORB Pro →" style={{ fontSize: 16, padding: "16px 40px", borderRadius: 999, background: `linear-gradient(135deg, ${G}, #38BFFF, #0086D4)`, color: "#000", fontWeight: 800, border: "none", cursor: "pointer", width: "100%" }} />
           <p style={{ fontSize: 12, color: "rgba(255,255,255,0.2)", marginTop: 16 }}>Questions? Join our <Link href="https://discord.gg/a9fJRsH3us" style={{ color: G }}>Discord</Link></p>
         </div>
       </section>

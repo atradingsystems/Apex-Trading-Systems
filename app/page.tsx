@@ -5,7 +5,7 @@ import CountUp from "@/components/CountUp";
 import FadeIn from "@/components/FadeIn";
 
 const DISCORD = "https://discord.gg/a9fJRsH3us";
-const G = "#D4AF37";
+const G = "#00A3FF";
 
 const glass: React.CSSProperties = {
   background: "#0d0d0d",
@@ -13,18 +13,18 @@ const glass: React.CSSProperties = {
   borderRadius: 20,
 };
 
-const glassGold: React.CSSProperties = {
-  background: "#120f00",
-  border: "1px solid rgba(212,175,55,0.3)",
+const glassBlue: React.CSSProperties = {
+  background: "#00091a",
+  border: "1px solid rgba(0,163,255,0.3)",
   borderRadius: 20,
-  boxShadow: "0 0 60px rgba(212,175,55,0.12)",
+  boxShadow: "0 0 60px rgba(0,163,255,0.12)",
 };
 
-const btnGold: React.CSSProperties = {
-  background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)",
+const btnBlue: React.CSSProperties = {
+  background: "linear-gradient(135deg, #0086D4, #00A3FF, #38BFFF)",
   borderRadius: 999,
   border: "none",
-  color: "#000",
+  color: "#fff",
   fontWeight: 800,
   textDecoration: "none",
   display: "inline-block",
@@ -59,9 +59,9 @@ const tiers = [
 ];
 
 const testimonials = [
-  { name: "Ant-Trading", role: "Elite Member", discord: true, quote: "Just closed the trade early for a gain of $4,150. The live alerts are insane — entry was clean, hit target perfectly." },
-  { name: "Jordan R.", role: "Elite Member", discord: false, quote: "Seeing the live alerts in real time alongside the education just clicks in a way that solo learning never did. Went from blowing accounts to actually being consistent." },
-  { name: "Martin F.", role: "Course Only", discord: false, quote: "9 modules of actual substance. The liquidity and FVG modules changed the way I read every single chart. Worth every penny." },
+  { name: "Marcus T.", role: "Apex Member", quote: "The ORB strategy alone was worth the membership. Clear, repeatable, and it actually works on ES. Best trading community I've been part of." },
+  { name: "Jordan R.", role: "Elite Member", quote: "Seeing the live alerts in real time alongside the education just clicks in a way that solo learning never did." },
+  { name: "Martin F.", role: "Course Only", quote: "9 modules of actual substance. The liquidity and FVG modules changed the way I see every chart." },
 ];
 
 const painPoints = [
@@ -90,10 +90,10 @@ export default function Home() {
         alignItems: "center", justifyContent: "center",
         textAlign: "center", padding: "140px 24px 100px",
         position: "relative", overflow: "hidden",
-        background: "radial-gradient(ellipse 100% 60% at 50% 0%, rgba(212,175,55,0.07) 0%, transparent 70%)",
+        background: "radial-gradient(ellipse 100% 60% at 50% 0%, rgba(0,163,255,0.07) 0%, transparent 70%)",
       }}>
         {/* Live badge */}
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.25)", borderRadius: 999, padding: "6px 16px", marginBottom: 28 }}>
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,163,255,0.08)", border: "1px solid rgba(0,163,255,0.25)", borderRadius: 999, padding: "6px 16px", marginBottom: 28 }}>
           <span style={{ width: 7, height: 7, borderRadius: "50%", background: G, display: "inline-block", boxShadow: `0 0 8px ${G}` }} />
           <span style={{ fontSize: 12, fontWeight: 600, color: G, letterSpacing: "0.08em" }}>50% OFF — LIMITED TIME</span>
         </div>
@@ -107,7 +107,7 @@ export default function Home() {
         </p>
 
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" as const }}>
-          <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{ ...btnGold, fontSize: 15, padding: "15px 32px" }}>Join Free →</a>
+          <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{ ...btnBlue, fontSize: 15, padding: "15px 32px" }}>Join Free →</a>
           <Link href="/pricing" style={{ ...btnGlass, fontSize: 15, padding: "15px 32px" }}>View Pricing</Link>
         </div>
 
@@ -134,7 +134,7 @@ export default function Home() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section style={{ padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.07)", background: "rgba(212,175,55,0.02)" }}>
+      <section style={{ padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.07)", background: "rgba(0,163,255,0.02)" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: G, marginBottom: 14 }}>The Process</p>
@@ -148,7 +148,7 @@ export default function Home() {
             ].map(item => (
               <FadeIn key={item.step} delay={0}>
                 <div style={{ ...glass, padding: "32px 28px", position: "relative" as const }}>
-                  <div style={{ fontSize: 48, fontWeight: 900, color: "rgba(212,175,55,0.12)", letterSpacing: "-0.04em", lineHeight: 1, marginBottom: 16 }}>{item.step}</div>
+                  <div style={{ fontSize: 48, fontWeight: 900, color: "rgba(0,163,255,0.12)", letterSpacing: "-0.04em", lineHeight: 1, marginBottom: 16 }}>{item.step}</div>
                   <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 10, letterSpacing: "-0.02em" }}>{item.title}</h3>
                   <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14, lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
                 </div>
@@ -199,7 +199,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div style={{ ...glassGold, padding: "24px 28px" }}>
+            <div style={{ ...glassBlue, padding: "24px 28px" }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: G, letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: 20 }}>Apex Trading Systems</div>
               {comparisons.map((c, i) => (
                 <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 14 }}>
@@ -266,13 +266,13 @@ export default function Home() {
               <span style={{ color: "rgba(255,255,255,0.7)", fontSize: 15 }}>Included free with every membership tier — even the free one.</span>
             </div>
             <br />
-            <a href="https://discord.gg/a9fJRsH3us" target="_blank" rel="noopener noreferrer" style={{ ...btnGold, fontSize: 14, padding: "13px 28px" }}>Get Access Free →</a>
+            <a href="https://discord.gg/a9fJRsH3us" target="_blank" rel="noopener noreferrer" style={{ ...btnBlue, fontSize: 14, padding: "13px 28px" }}>Get Access Free →</a>
           </div>
         </div>
       </section>
 
       {/* FREE LEAD MAGNET */}
-      <section style={{ padding: "80px 24px", background: "rgba(212,175,55,0.03)", borderTop: "1px solid rgba(212,175,55,0.1)", borderBottom: "1px solid rgba(212,175,55,0.1)" }}>
+      <section style={{ padding: "80px 24px", background: "rgba(0,163,255,0.03)", borderTop: "1px solid rgba(0,163,255,0.1)", borderBottom: "1px solid rgba(0,163,255,0.1)" }}>
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: G, marginBottom: 14 }}>Free Download</p>
           <h2 style={{ fontSize: "clamp(28px,5vw,48px)", fontWeight: 900, letterSpacing: "-0.04em", marginBottom: 16 }}>
@@ -296,7 +296,7 @@ export default function Home() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px,1fr))", gap: 12 }}>
             {tiers.map(tier => (
-              <div key={tier.name} style={{ ...(tier.highlight ? glassGold : glass), position: "relative", padding: "28px", display: "flex", flexDirection: "column" as const }}>
+              <div key={tier.name} style={{ ...(tier.highlight ? glassBlue : glass), position: "relative", padding: "28px", display: "flex", flexDirection: "column" as const }}>
                 {tier.highlight && (
                   <div style={{ position: "absolute", top: -13, left: "50%", transform: "translateX(-50%)", background: G, color: "#000", fontSize: 10, fontWeight: 800, padding: "4px 14px", borderRadius: 999, letterSpacing: "0.1em", textTransform: "uppercase" as const, whiteSpace: "nowrap" as const }}>Most Popular</div>
                 )}
@@ -321,7 +321,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <CheckoutButton tier={tier.stripeKey} label={tier.stripeKey === "free" ? "Join Free" : tier.name === "Apex" ? "Get Apex Access" : tier.name === "Elite" ? "Go Elite" : "Get Lifetime Access"}
-                  style={{ ...(tier.highlight ? btnGold : btnGlass), display: "block", textAlign: "center" as const, padding: "13px 20px", fontSize: 13, color: tier.highlight ? "#000" : "#fff", letterSpacing: "-0.01em" }} />
+                  style={{ ...(tier.highlight ? btnBlue : btnGlass), display: "block", textAlign: "center" as const, padding: "13px 20px", fontSize: 13, color: tier.highlight ? "#000" : "#fff", letterSpacing: "-0.01em" }} />
               </div>
             ))}
           </div>
@@ -329,7 +329,7 @@ export default function Home() {
       </section>
 
       {/* ELITE TRADE SETUPS */}
-      <section style={{ padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.07)", background: "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(212,175,55,0.05) 0%, transparent 70%)" }}>
+      <section style={{ padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.07)", background: "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(0,163,255,0.05) 0%, transparent 70%)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: G, marginBottom: 14 }}>Real Trades. Real Results.</p>
@@ -343,13 +343,13 @@ export default function Home() {
 
           {/* $4,150 featured result */}
           <FadeIn delay={0}>
-            <div style={{ background: "linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.03))", border: "1px solid rgba(212,175,55,0.3)", borderRadius: 20, padding: "28px 32px", marginBottom: 24, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap" as const, gap: 20 }}>
+            <div style={{ background: "linear-gradient(135deg, rgba(0,163,255,0.08), rgba(0,163,255,0.02))", border: "1px solid rgba(0,163,255,0.3)", borderRadius: 20, padding: "28px 32px", marginBottom: 24, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap" as const, gap: 20 }}>
               <div>
                 <div style={{ fontSize: 12, fontWeight: 700, color: G, letterSpacing: "0.12em", textTransform: "uppercase" as const, marginBottom: 8 }}>Featured Result — ES Long Alert · April 20, 2026</div>
                 <div style={{ fontSize: "clamp(28px,5vw,44px)", fontWeight: 900, color: "#00c853", letterSpacing: "-0.04em", lineHeight: 1 }}>+$4,150</div>
                 <div style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", marginTop: 8 }}>Entry 7,130.25 · Target 7,184.25 · R/R 1:2.8R · Closed early by member</div>
               </div>
-              <div style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontStyle: "italic", maxWidth: 280, borderLeft: "2px solid rgba(212,175,55,0.3)", paddingLeft: 20 }}>
+              <div style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontStyle: "italic", maxWidth: 280, borderLeft: "2px solid rgba(0,163,255,0.3)", paddingLeft: 20 }}>
                 &ldquo;Just closed the trade early for a gain of $4,150&rdquo;
                 <div style={{ marginTop: 8, color: G, fontStyle: "normal", fontWeight: 700, fontSize: 12 }}>— Ant-Trading, Elite Member</div>
               </div>
@@ -360,15 +360,15 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px,1fr))", gap: 12, marginBottom: 32 }}>
             {[
               { src: "/elite-setup-options.jpg", badge: "+93.97%", badgeColor: "#00c853", badgeBg: "rgba(0,200,83,0.15)", label: "AAPL Options", desc: "AAPL 292.5C weekly — live alert posted in Discord. P/L Open: +$1,275" },
-              { src: "/elite-setup-futures.jpg", badge: "Live Alert", badgeColor: G, badgeBg: "rgba(212,175,55,0.15)", label: "ES/MES Futures", desc: "ES Long — Entry 7,265.75 · Target 7,300.50. Posted in real time." },
-              { src: "/elite-setup-chart.jpg", badge: "Chart Analysis", badgeColor: G, badgeBg: "rgba(212,175,55,0.15)", label: "ES Futures Setup", desc: "15m chart with key levels and trade zones shared in #elite-trade-setups." },
+              { src: "/elite-setup-futures.jpg", badge: "Live Alert", badgeColor: G, badgeBg: "rgba(0,163,255,0.15)", label: "ES/MES Futures", desc: "ES Long — Entry 7,265.75 · Target 7,300.50. Posted in real time." },
+              { src: "/elite-setup-chart.jpg", badge: "Chart Analysis", badgeColor: G, badgeBg: "rgba(0,163,255,0.15)", label: "ES Futures Setup", desc: "15m chart with key levels and trade zones shared in #elite-trade-setups." },
               { src: "/elite-setup-alert.jpg", badge: "+$4,150", badgeColor: "#00c853", badgeBg: "rgba(0,200,83,0.15)", label: "Bot Alert + Result", desc: "Apex Bot posts the alert. Member closes for $4,150 gain. This is the loop." },
               { src: "/elite-setup-tp.jpg", badge: "TP Smashed", badgeColor: "#00c853", badgeBg: "rgba(0,200,83,0.15)", label: "ES Long · 4/15/26", desc: "Entry 7,008.25 · Target 7,018.75 · R/R 1:1.8R. \"Another TP smashed 💪\"" },
               { src: "/elite-setup-mes-short.jpg", badge: "TP1 + TP2 💪", badgeColor: "#00c853", badgeBg: "rgba(0,200,83,0.15)", label: "MES Short · 4/7/26", desc: "MESM26 Short · Entry 6,616.75 · TP1 6,589.75 · TP2 6,576.75 · R:R 1.74. Both targets smashed." },
               { src: "/elite-setup-mes-short2.jpg", badge: "TP1 + TP2 Hit", badgeColor: "#00c853", badgeBg: "rgba(0,200,83,0.15)", label: "MES Short · 4/6/26", desc: "MESM26 Short · Entry 6,642.00 · TP1 6,629.00 · TP2 6,624.00 · R:R 3. Chart confirms clean breakdown." },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 80}>
-                <div style={{ background: "#0d0d0d", border: "1px solid rgba(212,175,55,0.15)", borderRadius: 16, overflow: "hidden" }}>
+                <div style={{ background: "#0d0d0d", border: "1px solid rgba(0,163,255,0.15)", borderRadius: 16, overflow: "hidden" }}>
                   <img src={item.src} alt={item.label} style={{ width: "100%", display: "block" }} />
                   <div style={{ padding: "16px 18px" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
@@ -384,7 +384,7 @@ export default function Home() {
 
           <div style={{ textAlign: "center" }}>
             <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 13, marginBottom: 24 }}>Real screenshots from our Discord. No Photoshop. No cherry-picking.</p>
-            <a href="https://discord.gg/a9fJRsH3us" target="_blank" rel="noopener noreferrer" style={{ ...btnGold, fontSize: 14, padding: "13px 28px" }}>Get Elite Access →</a>
+            <a href="https://discord.gg/a9fJRsH3us" target="_blank" rel="noopener noreferrer" style={{ ...btnBlue, fontSize: 14, padding: "13px 28px" }}>Get Elite Access →</a>
           </div>
         </div>
       </section>
@@ -397,18 +397,13 @@ export default function Home() {
             <h2 style={{ fontSize: "clamp(36px,6vw,60px)", fontWeight: 900, letterSpacing: "-0.04em" }}>What traders say.</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px,1fr))", gap: 10 }}>
-            {testimonials.map((t: any) => (
+            {testimonials.map((t) => (
               <div key={t.name} style={{ ...glass, padding: "32px" }}>
                 <div style={{ display: "flex", gap: 2, marginBottom: 16 }}>
                   {[1,2,3,4,5].map(s => <span key={s} style={{ color: G, fontSize: 14 }}>★</span>)}
                 </div>
                 <p style={{ fontSize: 15, color: "rgba(255,255,255,0.65)", lineHeight: 1.75, marginBottom: 24, fontStyle: "italic" }}>&ldquo;{t.quote}&rdquo;</p>
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  {t.discord && (
-                    <span style={{ background: "rgba(88,101,242,0.2)", border: "1px solid rgba(88,101,242,0.3)", borderRadius: 6, padding: "2px 8px", fontSize: 10, fontWeight: 700, color: "#7289da", letterSpacing: "0.06em" }}>DISCORD</span>
-                  )}
-                  <div style={{ fontWeight: 700, fontSize: 14 }}>{t.name}</div>
-                </div>
+                <div style={{ fontWeight: 700, fontSize: 14 }}>{t.name}</div>
                 <div style={{ fontSize: 12, color: G, marginTop: 4 }}>{t.role}</div>
               </div>
             ))}
@@ -417,7 +412,7 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section style={{ padding: "120px 24px", textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.07)", background: "radial-gradient(ellipse 60% 60% at 50% 100%, rgba(212,175,55,0.06), transparent)" }}>
+      <section style={{ padding: "120px 24px", textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.07)", background: "radial-gradient(ellipse 60% 60% at 50% 100%, rgba(0,163,255,0.06), transparent)" }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(44px,8vw,88px)", fontWeight: 900, letterSpacing: "-0.04em", lineHeight: 1.02, marginBottom: 20 }}>
             Ready to trade<br /><span style={{ color: G }}>with real edge?</span>
@@ -425,7 +420,7 @@ export default function Home() {
           <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 18, marginBottom: 48, lineHeight: 1.65 }}>
             Join 30+ traders already inside Apex Trading Systems.<br />Start free — no credit card required.
           </p>
-          <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{ ...btnGold, fontSize: 17, padding: "18px 44px" }}>
+          <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{ ...btnBlue, fontSize: 17, padding: "18px 44px" }}>
             Join the Community →
           </a>
           <p style={{ marginTop: 16, color: "rgba(255,255,255,0.2)", fontSize: 13 }}>Free forever · No credit card · Cancel paid tiers anytime</p>

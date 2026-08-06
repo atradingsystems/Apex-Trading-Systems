@@ -25,7 +25,7 @@ export default function EmailCapture() {
     return (
       <div style={{ textAlign: "center", padding: "20px" }}>
         <div style={{ fontSize: 32, marginBottom: 12 }}>✅</div>
-        <div style={{ color: "#D4AF37", fontWeight: 700, fontSize: 18, marginBottom: 8 }}>Check your inbox!</div>
+        <div style={{ color: "#00A3FF", fontWeight: 700, fontSize: 18, marginBottom: 8 }}>Check your inbox!</div>
         <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>The ORB Strategy Guide is on its way.</div>
       </div>
     );
@@ -52,7 +52,7 @@ export default function EmailCapture() {
         }}
       />
       <button type="submit" disabled={loading} style={{
-        background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)",
+        background: "linear-gradient(135deg, #00A3FF, #38BFFF, #0086D4)",
         borderRadius: 999,
         border: "none",
         color: "#000",

@@ -2,7 +2,7 @@ import CheckoutButton from "@/components/CheckoutButton";
 import Link from "next/link";
 
 const DISCORD = "https://discord.gg/a9fJRsH3us";
-const G = "#D4AF37";
+const G = "#00A3FF";
 
 const glass: React.CSSProperties = {
   background: "#0d0d0d",
@@ -12,17 +12,17 @@ const glass: React.CSSProperties = {
   borderRadius: 20,
 };
 
-const glassGold: React.CSSProperties = {
-  background: "#120f00",
+const glassBlue: React.CSSProperties = {
+  background: "#00091a",
   
   
-  border: "1px solid rgba(212,175,55,0.3)",
+  border: "1px solid rgba(0,163,255,0.3)",
   borderRadius: 20,
-  boxShadow: "0 0 60px rgba(212,175,55,0.12)",
+  boxShadow: "0 0 60px rgba(0,163,255,0.12)",
 };
 
-const btnGold: React.CSSProperties = {
-  background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)",
+const btnBlue: React.CSSProperties = {
+  background: "linear-gradient(135deg, #00A3FF, #38BFFF, #0086D4)",
   borderRadius: 999,
   color: "#000",
   fontWeight: 800,
@@ -124,7 +124,7 @@ export default function Pricing() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px,1fr))", gap: 12 }}>
             {tiers.map(tier => (
               <div key={tier.name} style={{
-                ...(tier.highlight ? glassGold : glass),
+                ...(tier.highlight ? glassBlue : glass),
                 position: "relative",
                 padding: "32px 28px",
                 display: "flex",
@@ -178,7 +178,7 @@ export default function Pricing() {
                   tier={tier.stripeKey}
                   label={tier.cta}
                   style={{
-                    ...(tier.highlight ? btnGold : btnGlass),
+                    ...(tier.highlight ? btnBlue : btnGlass),
                     padding: "13px 20px",
                     fontSize: 13,
                     letterSpacing: "-0.01em",
@@ -217,7 +217,7 @@ export default function Pricing() {
           </h2>
           <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 17, marginBottom: 36 }}>No credit card. No commitment. Just join.</p>
           <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{
-            ...btnGold,
+            ...btnBlue,
             display: "inline-block",
             fontSize: 16,
             padding: "16px 40px",

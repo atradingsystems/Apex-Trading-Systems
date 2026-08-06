@@ -36,7 +36,7 @@ export default function Navbar() {
           transition: "all 0.4s ease",
         }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 0 }}>
-            <span style={{ color: "#D4AF37", fontWeight: 900, fontSize: 15, letterSpacing: "0.06em" }}>APEX</span>
+            <span style={{ color: "#00A3FF", fontWeight: 900, fontSize: 15, letterSpacing: "0.06em" }}>APEX</span>
             <span style={{ color: "rgba(255,255,255,0.85)", fontWeight: 500, fontSize: 15, letterSpacing: "0.06em" }}>&nbsp;TRADING SYSTEMS</span>
           </Link>
 
@@ -53,9 +53,9 @@ export default function Navbar() {
               </Link>
             ))}
             <a href="https://discord.gg/a9fJRsH3us" target="_blank" rel="noopener noreferrer" style={{
-                background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)",
+                background: "linear-gradient(135deg, #0086D4, #00A3FF, #38BFFF)",
                 borderRadius: 999,
-                color: "#000", fontWeight: 700, fontSize: 13,
+                color: "#fff", fontWeight: 700, fontSize: 13,
                 padding: "9px 20px", textDecoration: "none",
                 letterSpacing: "0.02em", border: "none",
               }}>
@@ -92,7 +92,7 @@ export default function Navbar() {
               <Link key={label} href={href} style={{ color: "#fff", fontSize: 16, textDecoration: "none" }} onClick={() => setOpen(false)}>{label}</Link>
             ))}
             <a href="https://discord.gg/a9fJRsH3us" target="_blank" rel="noopener noreferrer"
-              style={{ background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)", borderRadius: 999, color: "#000", fontWeight: 700, padding: "13px 20px", textDecoration: "none", textAlign: "center" as const, fontSize: 15 }}
+              style={{ background: "linear-gradient(135deg, #0086D4, #00A3FF, #38BFFF)", borderRadius: 999, color: "#fff", fontWeight: 700, padding: "13px 20px", textDecoration: "none", textAlign: "center" as const, fontSize: 15 }}
               onClick={() => setOpen(false)}>
               Join Free →
             </a>

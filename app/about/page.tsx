@@ -1,5 +1,5 @@
 const DISCORD = "https://discord.gg/a9fJRsH3us";
-const G = "#D4AF37";
+const G = "#00A3FF";
 
 const glass: React.CSSProperties = {
   background: "#0d0d0d",
@@ -31,7 +31,7 @@ export default function About() {
       }}>
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,175,55,0.08), transparent)",
+          background: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,163,255,0.08), transparent)",
         }} />
         <div style={{ maxWidth: 700, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: G, marginBottom: 16 }}>Our Story</p>
@@ -57,7 +57,7 @@ export default function About() {
           </p>
 
           {/* Pull quote */}
-          <div style={{ borderLeft: "3px solid rgba(212,175,55,0.5)", paddingLeft: 28, marginBottom: 48 }}>
+          <div style={{ borderLeft: "3px solid rgba(0,163,255,0.5)", paddingLeft: 28, marginBottom: 48 }}>
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 22, fontWeight: 700, lineHeight: 1.65, letterSpacing: "-0.02em", margin: 0 }}>
               I blew accounts. More than once. I chased entries with no structure, bought courses that taught me indicators instead of how markets actually move, and spent way too long in Discord servers full of noise and zero substance.
             </p>
@@ -110,7 +110,7 @@ export default function About() {
           </p>
 
           {/* What we offer */}
-          <div style={{ background: "#0d0d0d", border: "1px solid rgba(212,175,55,0.15)", borderRadius: 20, padding: "32px", marginBottom: 48 }}>
+          <div style={{ background: "#0d0d0d", border: "1px solid rgba(0,163,255,0.15)", borderRadius: 20, padding: "32px", marginBottom: 48 }}>
             <p style={{ fontSize: 13, fontWeight: 700, color: G, letterSpacing: "0.08em", textTransform: "uppercase" as const, marginBottom: 24 }}>What we offer that most communities don&apos;t</p>
             {[
               ["Start free", "No credit card. No pressure. Full community access from day one."],
@@ -150,7 +150,7 @@ export default function About() {
       <section style={{ padding: "80px 24px", borderTop: "1px solid rgba(255,255,255,0.07)", borderBottom: "1px solid rgba(255,255,255,0.07)", position: "relative" }}>
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(212,175,55,0.04), transparent)",
+          background: "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(0,163,255,0.04), transparent)",
         }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div style={{ textAlign: "center", marginBottom: 64 }}>
@@ -170,10 +170,10 @@ export default function About() {
                 overflow: "hidden" as const,
               }}>
                 {/* subtle gold top border */}
-                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.4), transparent)" }} />
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(0,163,255,0.4), transparent)" }} />
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
                   <span style={{ fontSize: 32 }}>{item.icon}</span>
-                  <span style={{ fontSize: 12, fontWeight: 800, color: "rgba(212,175,55,0.4)", letterSpacing: "0.1em" }}>{item.num}</span>
+                  <span style={{ fontSize: 12, fontWeight: 800, color: "rgba(0,163,255,0.4)", letterSpacing: "0.1em" }}>{item.num}</span>
                 </div>
                 <h3 style={{ fontWeight: 800, fontSize: 18, marginBottom: 12, letterSpacing: "-0.02em", color: "#fff" }}>{item.title}</h3>
                 <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 14, lineHeight: 1.75 }}>{item.desc}</p>
@@ -193,7 +193,7 @@ export default function About() {
             Join the community for free. No credit card. No commitment.
           </p>
           <a href={DISCORD} target="_blank" rel="noopener noreferrer" style={{
-            background: "linear-gradient(135deg, #D4AF37, #F0D060, #C49A28)",
+            background: "linear-gradient(135deg, #00A3FF, #38BFFF, #0086D4)",
             borderRadius: 999,
             color: "#000",
             fontWeight: 800,

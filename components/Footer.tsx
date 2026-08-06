@@ -32,7 +32,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ marginBottom: 16 }}>
-              <span style={{ color: "#D4AF37", fontWeight: 900, fontSize: 16, letterSpacing: "0.04em" }}>APEX</span>
+              <span style={{ color: "#00A3FF", fontWeight: 900, fontSize: 16, letterSpacing: "0.04em" }}>APEX</span>
               <span style={{ color: "rgba(255,255,255,0.4)", fontWeight: 400, fontSize: 14, marginLeft: 8, letterSpacing: "0.04em" }}>TRADING SYSTEMS</span>
             </div>
             <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 14, lineHeight: 1.75, maxWidth: 300 }}>
