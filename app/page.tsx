@@ -53,9 +53,9 @@ const features = [
 
 const tiers = [
   { name: "Free", price: "$0", period: "", desc: "Get started. No card needed.", features: ["Discord community access", "General chat & market talk", "Modules 0–3 (foundations)", "Rules & orientation", "🏈 Free sports betting picks"], stripeKey: "free", highlight: false },
-  { name: "Apex", price: "$25", oldPrice: "$49", period: "/mo", desc: "Full course + daily content.", badge: "50% OFF", features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Weekly recap & review"], stripeKey: "apex", highlight: false },
-  { name: "Elite", price: "$150", oldPrice: "$300", period: "/mo", desc: "Live alerts & mentorship.", badge: "50% OFF", features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions", "Priority support"], stripeKey: "elite", highlight: true },
-  { name: "Course Only", price: "$297", period: " once", desc: "Lifetime module access.", features: ["All 9 course modules", "Lifetime access", "Future updates included", "Course Q&A channel"], stripeKey: "course", highlight: false },
+  { name: "Apex", price: "$99", period: "/mo", desc: "Full course + daily content.", features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Weekly recap & review"], stripeKey: "apex", highlight: false },
+  { name: "Elite", price: "$299", period: "/mo", desc: "Live alerts & mentorship.", features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions", "Priority support"], stripeKey: "elite", highlight: true },
+  { name: "Lifetime Access", price: "$1,499", period: " once", desc: "Own every module. Forever.", features: ["All 10 course modules", "Lifetime access", "Future updates included", "Course Q&A channel", "No recurring fees"], stripeKey: "lifetime", highlight: false },
 ];
 
 const testimonials = [
@@ -95,7 +95,7 @@ export default function Home() {
         {/* Live badge */}
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,163,255,0.08)", border: "1px solid rgba(0,163,255,0.25)", borderRadius: 999, padding: "6px 16px", marginBottom: 28 }}>
           <span style={{ width: 7, height: 7, borderRadius: "50%", background: G, display: "inline-block", boxShadow: `0 0 8px ${G}` }} />
-          <span style={{ fontSize: 12, fontWeight: 600, color: G, letterSpacing: "0.08em" }}>50% OFF — LIMITED TIME</span>
+          <span style={{ fontSize: 12, fontWeight: 600, color: G, letterSpacing: "0.08em" }}>LIVE DAILY ALERTS + FULL CURRICULUM</span>
         </div>
 
         <h1 style={{ fontSize: "clamp(52px, 10vw, 96px)", fontWeight: 900, lineHeight: 1.02, letterSpacing: "-0.04em", marginBottom: 24 }}>
@@ -303,13 +303,13 @@ export default function Home() {
                 <div style={{ marginBottom: 20 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
                     <div style={{ fontSize: 11, fontWeight: 700, color: tier.highlight ? G : "rgba(255,255,255,0.4)", letterSpacing: "0.12em", textTransform: "uppercase" as const }}>{tier.name}</div>
-                    {(tier as any).badge && <span style={{ background: "#ff3b30", color: "#fff", fontSize: 10, fontWeight: 800, padding: "2px 8px", borderRadius: 999 }}>{(tier as any).badge}</span>}
+
                   </div>
                   <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 4 }}>
                     <span style={{ fontSize: 44, fontWeight: 900, letterSpacing: "-0.04em" }}>{tier.price}</span>
                     <span style={{ fontSize: 13, color: "rgba(255,255,255,0.3)" }}>{tier.period}</span>
                   </div>
-                  {(tier as any).oldPrice && <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginBottom: 4 }}><span style={{ textDecoration: "line-through" }}>{(tier as any).oldPrice}/mo</span></div>}
+
                   <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)" }}>{tier.desc}</p>
                 </div>
                 <ul style={{ flex: 1, listStyle: "none", padding: 0, marginBottom: 24 }}>
