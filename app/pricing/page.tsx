@@ -60,10 +60,9 @@ const tiers = [
   },
   {
     name: "Apex Member",
-    price: "$25",
+    price: "$99",
     period: "/mo",
     desc: "Full course + daily content.",
-    badge: "50% OFF",
     features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Weekly recap & review"],
     notIncluded: ["Signals & commentary", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions"],
     cta: "Get Apex Access",
@@ -72,10 +71,9 @@ const tiers = [
   },
   {
     name: "Elite",
-    price: "$150",
+    price: "$299",
     period: "/mo",
     desc: "Live alerts, mentorship & voice.",
-    badge: "50% OFF",
     features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship access", "Weekly voice sessions", "Priority support"],
     notIncluded: [],
     cta: "Go Elite",
@@ -83,22 +81,22 @@ const tiers = [
     stripeKey: "elite",
   },
   {
-    name: "Course Only",
-    price: "$297",
+    name: "Lifetime Access",
+    price: "$1,499",
     period: " once",
-    desc: "Lifetime module access.",
-    features: ["All 9 course modules", "Lifetime access", "Future updates included", "Course Q&A channel"],
+    desc: "Own every module. Forever.",
+    features: ["All 10 course modules", "Lifetime access", "Future updates included", "Course Q&A channel", "No recurring fees"],
     notIncluded: ["Community channels", "Live alerts", "Mentorship"],
     cta: "Get Lifetime Access",
     highlight: false,
-    stripeKey: "course",
+    stripeKey: "lifetime",
   },
 ];
 
 const faqs = [
   { q: "Do I need trading experience to join?", a: "No. The curriculum starts from absolute basics in Module 0. If you know what a candlestick is, you're ready." },
   { q: "What platform do I need to trade ES & NQ?", a: "We recommend NinjaTrader or Tradovate. Both are free to start. Module 0 covers the full setup." },
-  { q: "What's the difference between Apex Member and Course Only?", a: "Apex Member includes the full course plus ongoing daily signals, content, and community. Course Only is lifetime module access without the recurring community." },
+  { q: "What's the difference between Apex Member and Lifetime Access?", a: "Apex Member is a monthly subscription that includes the full course plus ongoing daily signals, content, and community access. Lifetime Access is a one-time payment for permanent access to all 10 course modules — no subscription needed." },
   { q: "Can I cancel my subscription?", a: "Yes — cancel anytime. No contracts, no questions asked. Access continues until the end of your billing period." },
   { q: "Are the live trade alerts real-time?", a: "Yes. Elite members receive live alerts directly in the Discord #elite-trade-setups channel with full entry, stop, and target details." },
 ];
@@ -143,19 +141,11 @@ export default function Pricing() {
                 <div style={{ marginBottom: 24 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
                     <div style={{ fontSize: 11, fontWeight: 700, color: tier.highlight ? G : "rgba(255,255,255,0.4)", letterSpacing: "0.12em", textTransform: "uppercase" }}>{tier.name}</div>
-                    {(tier as any).badge && (
-                      <span style={{ background: "#ff3b30", color: "#fff", fontSize: 10, fontWeight: 800, padding: "2px 8px", borderRadius: 999, letterSpacing: "0.08em" }}>{(tier as any).badge}</span>
-                    )}
                   </div>
                   <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 4 }}>
                     <span style={{ fontSize: 48, fontWeight: 900, letterSpacing: "-0.04em" }}>{tier.price}</span>
                     <span style={{ fontSize: 14, color: "rgba(255,255,255,0.3)" }}>{tier.period}</span>
                   </div>
-                  {(tier as any).badge && (
-                    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginBottom: 6 }}>
-                      <span style={{ textDecoration: "line-through" }}>{tier.name === "Elite" ? "$300/mo" : "$49/mo"}</span>
-                    </div>
-                  )}
                   <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)", lineHeight: 1.5 }}>{tier.desc}</p>
                 </div>
 

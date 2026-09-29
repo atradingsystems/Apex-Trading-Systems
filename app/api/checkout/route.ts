@@ -6,9 +6,10 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 });
 
 const PRICES: Record<string, string> = {
-  apex: "price_1U1QmoQkce3MIQeLREXxDD0n",   // $25/mo (50% promo)
-  elite: "price_1U1QmoQkce3MIQeLKsX7sk11",  // $150/mo (50% promo)
-  course: "price_1TKEalQkce3MIQeLSv9F55aO",
+  apex: "price_1UL9QmQkce3MIQeLhQvFNWav",    // $99/mo
+  elite: "price_1UL9QnQkce3MIQeLc2L9F1nO",   // $299/mo
+  lifetime: "price_1UL9QnQkce3MIQeLnDhaDvV6", // $1,499 one-time
+  course: "price_1TKEalQkce3MIQeLSv9F55aO",   // $297 one-time (legacy)
   orb_pro: "price_1TMCJzQkce3MIQeLtWbgUUga",
 };
 
@@ -25,7 +26,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid tier" }, { status: 400 });
   }
 
-  const isSubscription = tier !== "course" && tier !== "orb_pro";
+  const isSubscription = tier !== "course" && tier !== "orb_pro" && tier !== "lifetime";
   const baseUrl = process.env.NEXT_PUBLIC_URL || "https://apextradingsystems.io";
 
   try {
