@@ -55,7 +55,7 @@ const tiers = [
   { name: "Free", price: "$0", period: "", desc: "Get started. No card needed.", features: ["Discord community access", "General chat & market talk", "Modules 0–3 (foundations)", "Rules & orientation", "🏈 Free sports betting picks"], stripeKey: "free", highlight: false },
   { name: "Apex", price: "$99", period: "/mo", desc: "Full course + daily content.", features: ["Everything in Free", "All 9 course modules", "Daily bias & trade ideas", "Weekly recap & review"], stripeKey: "apex", highlight: false },
   { name: "Elite", price: "$299", period: "/mo", desc: "Live alerts & mentorship.", features: ["Everything in Apex", "Live trade alerts", "Elite trade setups", "1-on-1 mentorship", "Weekly voice sessions", "Priority support"], stripeKey: "elite", highlight: true },
-  { name: "Lifetime Access", price: "$1,499", period: " once", desc: "Own every module. Forever.", features: ["All 10 course modules", "Lifetime access", "Future updates included", "Course Q&A channel", "No recurring fees"], stripeKey: "lifetime", highlight: false },
+  { name: "Lifetime Access", price: "$1,499", period: " once", desc: "One payment. Course content yours forever.", features: ["All 10 course modules", "Lifetime access to course content", "Future module updates included", "Course Q&A channel access", "No subscription required"], stripeKey: "lifetime", highlight: false },
 ];
 
 const testimonials = [
