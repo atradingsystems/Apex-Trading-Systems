@@ -17,11 +17,13 @@ export const metadata: Metadata = {
     url: "https://www.apextradingsystems.io",
     siteName: "Apex Trading Systems",
     type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Apex Trading Systems" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Apex Trading Systems | Futures & Options Trading Course",
     description: "Learn futures and options trading with ICT methodology & the 8AM ORB strategy. Free to start — 9-module course, daily alerts, live mentorship.",
+    images: ["/og-image.jpg"],
   },
   metadataBase: new URL("https://www.apextradingsystems.io"),
   alternates: {
