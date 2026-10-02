@@ -7,20 +7,20 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
 
 export const metadata: Metadata = {
-  title: "Apex Trading Systems | Futures Trading Course — ES & NQ, ICT & ORB Strategy",
-  description: "Learn futures trading with a proven ICT & 8AM ORB strategy. Free community access, 9-module course, daily trade alerts, and live mentorship. Start free — no credit card.",
-  keywords: ["futures trading course", "ICT trading", "ORB strategy", "ES NQ trading", "trading community", "8AM opening range breakout", "prop firm trading", "Apex Trading Systems"],
+  title: "Apex Trading Systems | Futures & Options Trading Course — ES & NQ, ICT & ORB Strategy",
+  description: "Learn futures and options trading with a proven ICT & 8AM ORB strategy. Free community access, 9-module course, daily trade alerts, and live mentorship. Start free — no credit card.",
+  keywords: ["futures trading course", "options trading course", "ICT trading", "ORB strategy", "ES NQ trading", "trading community", "8AM opening range breakout", "prop firm trading", "options on futures", "Apex Trading Systems"],
   openGraph: {
-    title: "Apex Trading Systems | Futures Trading Course",
-    description: "Learn futures trading with ICT methodology & the 8AM ORB strategy. Free to start — 9-module course, daily alerts, live mentorship.",
+    title: "Apex Trading Systems | Futures & Options Trading Course",
+    description: "Learn futures and options trading with ICT methodology & the 8AM ORB strategy. Free to start — 9-module course, daily alerts, live mentorship.",
     url: "https://www.apextradingsystems.io",
     siteName: "Apex Trading Systems",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Apex Trading Systems | Futures Trading Course",
-    description: "Learn futures trading with ICT methodology & the 8AM ORB strategy. Free to start — 9-module course, daily alerts, live mentorship.",
+    title: "Apex Trading Systems | Futures & Options Trading Course",
+    description: "Learn futures and options trading with ICT methodology & the 8AM ORB strategy. Free to start — 9-module course, daily alerts, live mentorship.",
   },
   metadataBase: new URL("https://www.apextradingsystems.io"),
   alternates: {
